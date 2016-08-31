@@ -1,0 +1,7 @@
+[
+    { text: "Cascavel", estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png" },
+    { text: "Curitiba", estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/25264916.png" },
+    { text: "Foz do Iguaçu", estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/25245437.png" },
+    { text: "Toledo", estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/24475343.png" },
+    { text: "Maringá", estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/23275159.png" }
+  ]

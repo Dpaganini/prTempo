@@ -1,0 +1,43 @@
+<ion-view view-title="Paraná Tempo" cache-view="false" ng-controller="SateliteCtrl">
+  
+<ion-nav-buttons side="right">
+  <h5>Satélite: &nbsp</h5>
+  <h6>Goes</h6>
+  <label class="toggle" ng-click="mudaSatelite()">
+    <input type="checkbox">
+    <div class="track">
+      <div class="handle"></div>
+    </div>
+  </label>
+  <h6>Eurosat</h6>
+</ion-nav-buttons>
+  
+  <ion-content class="content-box">
+    <ion-refresher on-refresh="doRefresh()" spinner="lines">
+    </ion-refresher> 
+
+    <div id="cf4a" ng-if="sateliteGoes" class="enquadrar">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_8.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_7.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_6.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_5.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_4.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_3.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_2.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/goes8msul2ir4_1.gif">
+            </div>
+            
+            
+    <div id="cf4a" ng-if="!sateliteGoes" class="enquadrar">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_1.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_2.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_3.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_4.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_5.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_6.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_7.gif">
+            <img src="http://www.simepar.br/site/fragmentos/satelite/eumetsat/regsul_ir_108_8.gif">
+            </div>
+
+  </ion-content>
+</ion-view>

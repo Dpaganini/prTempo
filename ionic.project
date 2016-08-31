@@ -1,0 +1,12 @@
+{
+  "name": "ParanaTempo",
+  "app_id": "b73d8d44",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

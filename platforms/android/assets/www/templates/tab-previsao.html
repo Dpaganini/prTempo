@@ -1,0 +1,173 @@
+<ion-view view-title="Paraná Tempo" ng-controller="PrevisaoCtrl">
+  
+  <ion-nav-buttons side="right">
+  <h5>Cidade: &nbsp</h5>
+   <!--<select class="item item-input item-select" ng-model="data.cidadeId" ng-options="item.cidadeId as item.text for item in listaCidades" ng-change="baixaXml()">-->
+   <!--     </select>-->
+        
+        
+<ui-select ng-model="cidadePrevi" theme="select2" ng-disabled="disabled" style="min-width: 150px;" on-select="baixaXml($select.selected.cidadeId,$select.selected.text)">
+  <ui-select-match >{{cidadePrevi.text}}</ui-select-match>
+  <ui-select-choices repeat="item in listaCidades | propsFilter: {text: $select.search}">
+    <div ng-bind-html="item.text | highlight: $select.search"></div>
+  </ui-select-choices>
+</ui-select>
+  
+  </ion-nav-buttons>
+  
+  
+    <ion-content class="padding">
+        <ion-refresher on-refresh="doRefresh()" spinner="lines">
+      </ion-refresher>  
+      <div class="list card">
+  
+
+      <div class="item item-divider item-icon-right" ng-click="palavra();" >Condições Meteorológicas - Palavra do Meteorologista
+        <i class="icon ion-arrow-up-a" ng-if="palavraRes"></i>
+        <i class="icon ion-arrow-down-a" ng-if="!palavraRes"></i>
+      </div>
+      
+      <div class="item item-body animate-hide" ng-if="palavraRes">
+        <h3 align="center">{{cond_Dia1Semana+". - "+cond_Dia1Data}}</h3>  
+        <p>{{cond_Dia1Dados}}</p>
+        
+      </div>
+      <div class="item item-body" ng-if="palavraRes">
+        <h3 align="center">{{cond_Dia2Semana+". - "+cond_Dia2Data}}</h3>  
+           <p>{{cond_Dia2Dados}}</p>
+        
+      </div>
+    </div>
+    
+    <div class="list card">
+      <div class="item item-divider">{{prev1_Semana+". - "+prev1_Data}}</div>
+      <h4 align="center" ng-if="maxima" >Máxima: {{prev1_TempMax}}    Mínima: {{prev1_TempMin}}</h4>
+      
+      
+
+      <div ng-if="madrugada" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev1_MadrugadaIcone}}"/>
+        <div>
+          <h2>Madrugada:</h2>
+              <p>{{prev1_Madrugada}}</p>
+        </div>
+      </div>
+      <div ng-if="manha" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev1_ManhaIcone}}"/>
+        <div>
+          <h2>Manhã:</h2>
+        
+              <p>{{prev1_Manha}}</p>
+        </div>
+      </div>
+      <div ng-if="tarde" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev1_TardeIcone}}">
+        <div>
+          <h2>Tarde:</h2>
+              <p>{{prev1_Tarde}}</p>
+        </div>
+      </div>
+      <div ng-show="noite" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev1_NoiteIcone}}">
+        <div>
+          <h2>Noite:</h2>
+              <p>{{prev1_Noite}}</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+<div class="list card" ng-if="prev2_legendadia2" >
+      <div class="item item-divider">Próximos dias:</div>
+
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev2_DiaIcone}}" />
+    <h2>{{prev2_Semana+". - "+prev2_Data}}</h2>
+    <h3>Máxima: {{prev2_TempMax}}    Mínima: {{prev2_TempMin}}</h3>
+    <p>{{prev2_Dia}}</p>
+  </div>
+  
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev3_DiaIcone}}" />
+    <h2>{{prev3_Semana+". - "+prev3_Data}}</h2>
+    <h3>Máxima: {{prev3_TempMax}}    Mínima: {{prev3_TempMin}}</h3>
+    <p>{{prev3_Dia}}</p>
+  </div>
+
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev4_DiaIcone}}" />
+    <h2>{{prev4_Semana+". - "+prev4_Data}}</h2>
+    <h3>Máxima: {{prev4_TempMax}}    Mínima: {{prev4_TempMin}}</h3>
+    <p>{{prev4_Dia}}</p>
+  </div>
+
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev5_DiaIcone}}" />
+    <h2>{{prev5_Semana+". - "+prev5_Data}}</h2>
+    <h3>Máxima: {{prev5_TempMax}}    Mínima: {{prev5_TempMin}}</h3>
+        <p>{{prev5_Dia}}</p>
+  </div>
+</div>
+
+
+<div class="list card" ng-if="!prev2_legendadia2" >
+      <div class="item item-divider">{{prev2_Semana+". - "+prev2_Data}}</div>
+      <h4 align="center">Máxima: {{prev2_TempMax}}    Mínima: {{prev2_TempMin}}</h4>
+      <div ng-if="madrugada2" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev2_MadrugadaIcone}}"/>
+        <div>
+          <h2>Madrugada:</h2>
+              <p>{{prev2_Madrugada}}</p>
+        </div>
+      </div>
+      <div ng-if="manha2" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev2_ManhaIcone}}"/>
+        <div>
+          <h2>Manhã:</h2>
+        
+              <p>{{prev2_Manha}}</p>
+        </div>
+      </div>
+      <div ng-if="tarde2" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev2_TardeIcone}}">
+        <div>
+          <h2>Tarde:</h2>
+              <p>{{prev2_Tarde}}</p>
+        </div>
+      </div>
+      <div ng-if="noite2" class="item item-thumbnail-left"> <img ng-src="http://www.simepar.br{{prev2_NoiteIcone}}">
+        <div>
+          <h2>Noite:</h2>
+              <p>{{prev2_Noite}}</p>
+        </div>
+      </div>
+    </div>
+<div class="list card" ng-if="!prev2_legendadia2" >
+      <div class="item item-divider">Próximos dias:</div>
+
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev3_DiaIcone}}" />
+    <h2>{{prev3_Semana+". - "+prev3_Data}}</h2>
+    <h3>Máxima: {{prev3_TempMax}}    Mínima: {{prev3_TempMin}}</h3>
+    <p>{{prev3_Dia}}</p>
+  </div>
+
+
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev4_DiaIcone}}" />
+    <h2>{{prev4_Semana+". - "+prev4_Data}}</h2>
+    <h3>Máxima: {{prev4_TempMax}}    Mínima: {{prev4_TempMin}}</h3>
+    <p>{{prev4_Dia}}</p>
+  </div>
+
+  <div class="item item-thumbnail-left">
+    <img ng-src="http://www.simepar.br{{prev5_DiaIcone}}" />
+    <h2>{{prev5_Semana+". - "+prev5_Data}}</h2>
+    <h3>Máxima: {{prev5_TempMax}}    Mínima: {{prev5_TempMin}}</h3>
+        <p>{{prev5_Dia}}</p>
+  </div>
+
+</div>
+    
+    
+    
+    
+    
+
+  </ion-content>
+</ion-view>

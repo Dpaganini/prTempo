@@ -1,0 +1,46 @@
+<ion-view view-title="Paraná Tempo" cache-view="false" ng-controller="AgoraCtrl">
+  
+  <ion-nav-buttons side="right">
+    <h5>Estação: &nbsp</h5>
+    <select class="item item-input item-select" ng-model="data.estacaoId" ng-options="item.estacaoId as item.text for item in listaEstacao">
+    </select>
+  </ion-nav-buttons>
+  
+  <ion-content scroll="true">
+    <ion-refresher on-refresh="doRefresh()" spinner="lines">
+    </ion-refresher> 
+<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" show-pager="true">
+<ion-slide>
+  <div id="grafico1">
+    <img ng-src="{{data.estacaoId}}" />
+  </div>
+</ion-slide>
+<ion-slide>
+  <div id="grafico2">
+    <img ng-src="{{data.estacaoId}}" />
+  </div>
+</ion-slide>
+<ion-slide>
+  <div id="grafico3">
+    <img ng-src="{{data.estacaoId}}" />
+  </div>
+</ion-slide>
+<ion-slide>
+  <div id="grafico4">
+    <img ng-src="{{data.estacaoId}}" />
+  </div>
+</ion-slide>
+<ion-slide>
+  <div id="grafico5">
+    <img ng-src="{{data.estacaoId}}" />
+  </div>
+</ion-slide>
+<ion-slide>
+  <div id="grafico6">
+    <img ng-src="{{data.estacaoId}}" />
+  </div>
+</ion-slide>
+ 
+</ion-slide-box>
+  </ion-content>
+</ion-view>
