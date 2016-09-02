@@ -1,0 +1,1999 @@
+{
+    "data": [
+        {
+            "cidadeId": "4100103",
+            "text": "Abatiá"
+        },
+
+        {
+            "cidadeId": "4100202",
+            "text": "Adrianópolis"
+        },
+
+        {
+            "cidadeId": "4100301",
+            "text": "Agudos do Sul"
+        },
+
+        {
+            "cidadeId": "4100400",
+            "text": "Almirante Tamandaré"
+        },
+
+        {
+            "cidadeId": "4100459",
+            "text": "Altamira do Paraná"
+        },
+
+        {
+            "cidadeId": "4128625",
+            "text": "Alto Paraíso"
+        },
+
+        {
+            "cidadeId": "4100608",
+            "text": "Alto Paraná"
+        },
+
+        {
+            "cidadeId": "4100707",
+            "text": "Alto Piquiri"
+        },
+
+        {
+            "cidadeId": "4100509",
+            "text": "Altônia"
+        },
+
+        {
+            "cidadeId": "4100806",
+            "text": "Alvorada do Sul"
+        },
+
+        {
+            "cidadeId": "4100905",
+            "text": "Amaporã"
+        },
+
+        {
+            "cidadeId": "4101002",
+            "text": "Ampére"
+        },
+
+        {
+            "cidadeId": "4101051",
+            "text": "Anahy"
+        },
+
+        {
+            "cidadeId": "4101101",
+            "text": "Andirá"
+        },
+
+        {
+            "cidadeId": "4101150",
+            "text": "Ângulo"
+        },
+
+        {
+            "cidadeId": "4101200",
+            "text": "Antonina"
+        },
+
+        {
+            "cidadeId": "4101309",
+            "text": "Antônio Olinto"
+        },
+
+        {
+            "cidadeId": "4101408",
+            "text": "Apucarana"
+        },
+
+        {
+            "cidadeId": "4101507",
+            "text": "Arapongas"
+        },
+
+        {
+            "cidadeId": "4101606",
+            "text": "Arapoti"
+        },
+
+        {
+            "cidadeId": "4101655",
+            "text": "Arapuã"
+        },
+
+        {
+            "cidadeId": "4101705",
+            "text": "Araruna"
+        },
+
+        {
+            "cidadeId": "4101804",
+            "text": "Araucária"
+        },
+
+        {
+            "cidadeId": "4101853",
+            "text": "Ariranha do Ivaí"
+        },
+
+        {
+            "cidadeId": "4101903",
+            "text": "Assaí"
+        },
+
+        {
+            "cidadeId": "4102000",
+            "text": "Assis Chateaubriand"
+        },
+
+        {
+            "cidadeId": "4102109",
+            "text": "Astorga"
+        },
+
+        {
+            "cidadeId": "4102208",
+            "text": "Atalaia"
+        },
+
+        {
+            "cidadeId": "4102307",
+            "text": "Balsa Nova"
+        },
+
+        {
+            "cidadeId": "4102406",
+            "text": "Bandeirantes"
+        },
+
+        {
+            "cidadeId": "4102505",
+            "text": "Barbosa Ferraz"
+        },
+
+        {
+            "cidadeId": "4102703",
+            "text": "Barra do Jacaré"
+        },
+
+        {
+            "cidadeId": "4102604",
+            "text": "Barracão"
+        },
+
+        {
+            "cidadeId": "4102752",
+            "text": "Bela Vista da Caroba"
+        },
+
+        {
+            "cidadeId": "4102802",
+            "text": "Bela Vista do Paraíso"
+        },
+
+        {
+            "cidadeId": "4102901",
+            "text": "Bituruna"
+        },
+
+        {
+            "cidadeId": "4103008",
+            "text": "Boa Esperança"
+        },
+
+        {
+            "cidadeId": "4103024",
+            "text": "Boa Esperança do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4103040",
+            "text": "Boa Ventura de São Roque"
+        },
+
+        {
+            "cidadeId": "4103057",
+            "text": "Boa Vista da Aparecida"
+        },
+
+        {
+            "cidadeId": "4103107",
+            "text": "Bocaiúva do Sul"
+        },
+
+        {
+            "cidadeId": "4103156",
+            "text": "Bom Jesus do Sul"
+        },
+
+        {
+            "cidadeId": "4103206",
+            "text": "Bom Sucesso"
+        },
+
+        {
+            "cidadeId": "4103222",
+            "text": "Bom Sucesso do Sul"
+        },
+
+        {
+            "cidadeId": "4103305",
+            "text": "Borrazópolis"
+        },
+
+        {
+            "cidadeId": "4103354",
+            "text": "Braganey"
+        },
+
+        {
+            "cidadeId": "4103370",
+            "text": "Brasilândia do Sul"
+        },
+
+        {
+            "cidadeId": "4103404",
+            "text": "Cafeara"
+        },
+
+        {
+            "cidadeId": "4103453",
+            "text": "Cafelândia"
+        },
+
+        {
+            "cidadeId": "4103479",
+            "text": "Cafezal do Sul"
+        },
+
+        {
+            "cidadeId": "4103503",
+            "text": "Califórnia"
+        },
+
+        {
+            "cidadeId": "4103602",
+            "text": "Cambará"
+        },
+
+        {
+            "cidadeId": "4103701",
+            "text": "Cambé"
+        },
+
+        {
+            "cidadeId": "4103800",
+            "text": "Cambira"
+        },
+
+        {
+            "cidadeId": "4103909",
+            "text": "Campina da Lagoa"
+        },
+
+        {
+            "cidadeId": "4103958",
+            "text": "Campina do Simão"
+        },
+
+        {
+            "cidadeId": "4104006",
+            "text": "Campina Grande do Sul"
+        },
+
+        {
+            "cidadeId": "4104055",
+            "text": "Campo Bonito"
+        },
+
+        {
+            "cidadeId": "4104105",
+            "text": "Campo do Tenente"
+        },
+
+        {
+            "cidadeId": "4104204",
+            "text": "Campo Largo"
+        },
+
+        {
+            "cidadeId": "4104253",
+            "text": "Campo Magro"
+        },
+
+        {
+            "cidadeId": "4104303",
+            "text": "Campo Mourão"
+        },
+
+        {
+            "cidadeId": "4104402",
+            "text": "Cândido de Abreu"
+        },
+
+        {
+            "cidadeId": "4104428",
+            "text": "Candói"
+        },
+
+        {
+            "cidadeId": "4104451",
+            "text": "Cantagalo"
+        },
+
+        {
+            "cidadeId": "4104501",
+            "text": "Capanema"
+        },
+
+        {
+            "cidadeId": "4104600",
+            "text": "Capitão Leônidas Marques"
+        },
+
+        {
+            "cidadeId": "4104659",
+            "text": "Carambeí"
+        },
+
+        {
+            "cidadeId": "4104709",
+            "text": "Carlópolis"
+        },
+
+        {
+            "cidadeId": "4104808",
+            "text": "Cascavel"
+        },
+
+        {
+            "cidadeId": "4104907",
+            "text": "Castro"
+        },
+
+        {
+            "cidadeId": "4105003",
+            "text": "Catanduvas"
+        },
+
+        {
+            "cidadeId": "4105102",
+            "text": "Centenário do Sul"
+        },
+
+        {
+            "cidadeId": "4105201",
+            "text": "Cerro Azul"
+        },
+
+        {
+            "cidadeId": "4105300",
+            "text": "Ceu Azul"
+        },
+
+        {
+            "cidadeId": "4105409",
+            "text": "Chopinzinho"
+        },
+
+        {
+            "cidadeId": "4105508",
+            "text": "Cianorte"
+        },
+
+        {
+            "cidadeId": "4105607",
+            "text": "Cidade Gaúcha"
+        },
+
+        {
+            "cidadeId": "4105706",
+            "text": "Clevelândia"
+        },
+
+        {
+            "cidadeId": "4105805",
+            "text": "Colombo"
+        },
+
+        {
+            "cidadeId": "4105904",
+            "text": "Colorado"
+        },
+
+        {
+            "cidadeId": "4106001",
+            "text": "Congonhinhas"
+        },
+
+        {
+            "cidadeId": "4106100",
+            "text": "Conselheiro Mairinck"
+        },
+
+        {
+            "cidadeId": "4106209",
+            "text": "Contenda"
+        },
+
+        {
+            "cidadeId": "4106308",
+            "text": "Corbélia"
+        },
+
+        {
+            "cidadeId": "4106407",
+            "text": "Cornélio Procópio"
+        },
+
+        {
+            "cidadeId": "4106456",
+            "text": "Coronel Domingos Soares"
+        },
+
+        {
+            "cidadeId": "4106506",
+            "text": "Coronel Vivida"
+        },
+
+        {
+            "cidadeId": "4106555",
+            "text": "Corumbataí do Sul"
+        },
+
+        {
+            "cidadeId": "4106803",
+            "text": "Cruz Machado"
+        },
+
+        {
+            "cidadeId": "4106571",
+            "text": "Cruzeiro do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4106605",
+            "text": "Cruzeiro do Oeste"
+        },
+
+        {
+            "cidadeId": "4106704",
+            "text": "Cruzeiro do Sul"
+        },
+
+        {
+            "cidadeId": "4106852",
+            "text": "Cruzmaltina"
+        },
+
+        {
+            "cidadeId": "4106902",
+            "text": "Curitiba"
+        },
+
+        {
+            "cidadeId": "4107009",
+            "text": "Curiúva"
+        },
+
+        {
+            "cidadeId": "4107108",
+            "text": "Diamante do Norte"
+        },
+
+        {
+            "cidadeId": "4107124",
+            "text": "Diamante do Sul"
+        },
+
+        {
+            "cidadeId": "4107157",
+            "text": "Diamante d'Oeste"
+        },
+
+        {
+            "cidadeId": "4107207",
+            "text": "Dois Vizinhos"
+        },
+
+        {
+            "cidadeId": "4107256",
+            "text": "Douradina"
+        },
+
+        {
+            "cidadeId": "4107306",
+            "text": "Doutor Camargo"
+        },
+
+        {
+            "cidadeId": "4128633",
+            "text": "Doutor Ulysses"
+        },
+
+        {
+            "cidadeId": "4107405",
+            "text": "Enéas Marques"
+        },
+
+        {
+            "cidadeId": "4107504",
+            "text": "Engenheiro Beltrão"
+        },
+
+        {
+            "cidadeId": "4107538",
+            "text": "Entre Rios do Oeste"
+        },
+
+        {
+            "cidadeId": "4107520",
+            "text": "Esperança Nova"
+        },
+
+        {
+            "cidadeId": "4107546",
+            "text": "Espigão Alto do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4107553",
+            "text": "Farol"
+        },
+
+        {
+            "cidadeId": "4107603",
+            "text": "Faxinal"
+        },
+
+        {
+            "cidadeId": "4107652",
+            "text": "Fazenda Rio Grande"
+        },
+
+        {
+            "cidadeId": "4107702",
+            "text": "Fênix"
+        },
+
+        {
+            "cidadeId": "4107736",
+            "text": "Fernandes Pinheiro"
+        },
+
+        {
+            "cidadeId": "4107751",
+            "text": "Figueira"
+        },
+
+        {
+            "cidadeId": "4107850",
+            "text": "Flor da Serra do Sul"
+        },
+
+        {
+            "cidadeId": "4107801",
+            "text": "Florai"
+        },
+
+        {
+            "cidadeId": "4107900",
+            "text": "Floresta"
+        },
+
+        {
+            "cidadeId": "4108007",
+            "text": "Florestópolis"
+        },
+
+        {
+            "cidadeId": "4108106",
+            "text": "Florida"
+        },
+
+        {
+            "cidadeId": "4108205",
+            "text": "Formosa do Oeste"
+        },
+
+        {
+            "cidadeId": "4108304",
+            "text": "Foz do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4108452",
+            "text": "Foz do Jordão"
+        },
+
+        {
+            "cidadeId": "4108320",
+            "text": "Francisco Alves"
+        },
+
+        {
+            "cidadeId": "4108403",
+            "text": "Francisco Beltrão"
+        },
+
+        {
+            "cidadeId": "4108502",
+            "text": "General Carneiro"
+        },
+
+        {
+            "cidadeId": "4108551",
+            "text": "Godoy Moreira"
+        },
+
+        {
+            "cidadeId": "4108601",
+            "text": "Goioerê"
+        },
+
+        {
+            "cidadeId": "4108650",
+            "text": "Goioxim"
+        },
+
+        {
+            "cidadeId": "4108700",
+            "text": "Grandes Rios"
+        },
+
+        {
+            "cidadeId": "4108809",
+            "text": "Guaíra"
+        },
+
+        {
+            "cidadeId": "4108908",
+            "text": "Guairaca"
+        },
+
+        {
+            "cidadeId": "4108957",
+            "text": "Guamiranga"
+        },
+
+        {
+            "cidadeId": "4109005",
+            "text": "Guapirama"
+        },
+
+        {
+            "cidadeId": "4109104",
+            "text": "Guaporema"
+        },
+
+        {
+            "cidadeId": "4109203",
+            "text": "Guaraci"
+        },
+
+        {
+            "cidadeId": "4109302",
+            "text": "Guaraniacu"
+        },
+
+        {
+            "cidadeId": "4109401",
+            "text": "Guarapuava"
+        },
+
+        {
+            "cidadeId": "4109500",
+            "text": "Guaraqueçaba"
+        },
+
+        {
+            "cidadeId": "4109609",
+            "text": "Guaratuba"
+        },
+
+        {
+            "cidadeId": "4109658",
+            "text": "Honório Serpa"
+        },
+
+        {
+            "cidadeId": "4109708",
+            "text": "Ibaiti"
+        },
+
+        {
+            "cidadeId": "4109757",
+            "text": "Ibema"
+        },
+
+        {
+            "cidadeId": "4109807",
+            "text": "Ibiporã"
+        },
+
+        {
+            "cidadeId": "4109906",
+            "text": "Icaraima"
+        },
+
+        {
+            "cidadeId": "4110003",
+            "text": "Iguaracu"
+        },
+
+        {
+            "cidadeId": "4110052",
+            "text": "Iguatu"
+        },
+
+        {
+            "cidadeId": "4110078",
+            "text": "Imbaú"
+        },
+
+        {
+            "cidadeId": "4110102",
+            "text": "Imbituva"
+        },
+
+        {
+            "cidadeId": "4110201",
+            "text": "Inácio Martins"
+        },
+
+        {
+            "cidadeId": "4110300",
+            "text": "Inajá"
+        },
+
+        {
+            "cidadeId": "4110409",
+            "text": "Indianópolis"
+        },
+
+        {
+            "cidadeId": "4110508",
+            "text": "Ipiranga"
+        },
+
+        {
+            "cidadeId": "4110607",
+            "text": "Iporã"
+        },
+
+        {
+            "cidadeId": "4110656",
+            "text": "Iracema do Oeste"
+        },
+
+        {
+            "cidadeId": "4110706",
+            "text": "Irati"
+        },
+
+        {
+            "cidadeId": "4110805",
+            "text": "Iretama"
+        },
+
+        {
+            "cidadeId": "4110904",
+            "text": "Itaguaje"
+        },
+
+        {
+            "cidadeId": "4110953",
+            "text": "Itaipulândia"
+        },
+
+        {
+            "cidadeId": "4111001",
+            "text": "Itambaraca"
+        },
+
+        {
+            "cidadeId": "4111100",
+            "text": "Itambé"
+        },
+
+        {
+            "cidadeId": "4111209",
+            "text": "Itapejara Doeste"
+        },
+
+        {
+            "cidadeId": "4111258",
+            "text": "Itaperuçu"
+        },
+
+        {
+            "cidadeId": "4111308",
+            "text": "Itaúna Do Sul"
+        },
+
+        {
+            "cidadeId": "4111407",
+            "text": "Ivaí"
+        },
+
+        {
+            "cidadeId": "4111506",
+            "text": "Ivaiporã"
+        },
+
+        {
+            "cidadeId": "4111555",
+            "text": "Ivaté"
+        },
+
+        {
+            "cidadeId": "4111605",
+            "text": "Ivatuba"
+        },
+
+        {
+            "cidadeId": "4111704",
+            "text": "Jaboti"
+        },
+
+        {
+            "cidadeId": "4111803",
+            "text": "Jacarezinho"
+        },
+
+        {
+            "cidadeId": "4111902",
+            "text": "Jaguapita"
+        },
+
+        {
+            "cidadeId": "4112009",
+            "text": "Jaguariaíva"
+        },
+
+        {
+            "cidadeId": "4112108",
+            "text": "Jandaia do Sul"
+        },
+
+        {
+            "cidadeId": "4112207",
+            "text": "Janiópolis"
+        },
+
+        {
+            "cidadeId": "4112306",
+            "text": "Japira"
+        },
+
+        {
+            "cidadeId": "4112405",
+            "text": "Japura"
+        },
+
+        {
+            "cidadeId": "4112504",
+            "text": "Jardim Alegre"
+        },
+
+        {
+            "cidadeId": "4112603",
+            "text": "Jardim Olinda"
+        },
+
+        {
+            "cidadeId": "4112702",
+            "text": "Jataizinho"
+        },
+
+        {
+            "cidadeId": "4112751",
+            "text": "Jesuitas"
+        },
+
+        {
+            "cidadeId": "4112801",
+            "text": "Joaquim Távora"
+        },
+
+        {
+            "cidadeId": "4112900",
+            "text": "Jundiai do Sul"
+        },
+
+        {
+            "cidadeId": "4112959",
+            "text": "Juranda"
+        },
+
+        {
+            "cidadeId": "4113007",
+            "text": "Jussara"
+        },
+
+        {
+            "cidadeId": "4113106",
+            "text": "Kaloré"
+        },
+
+        {
+            "cidadeId": "4113205",
+            "text": "Lapa"
+        },
+
+        {
+            "cidadeId": "4113254",
+            "text": "Laranjal"
+        },
+
+        {
+            "cidadeId": "4113304",
+            "text": "Laranjeiras do Sul"
+        },
+
+        {
+            "cidadeId": "4113403",
+            "text": "Leópolis"
+        },
+
+        {
+            "cidadeId": "4113429",
+            "text": "Lidianópolis"
+        },
+
+        {
+            "cidadeId": "4113452",
+            "text": "Lindoeste"
+        },
+
+        {
+            "cidadeId": "4113502",
+            "text": "Loanda"
+        },
+
+        {
+            "cidadeId": "4113601",
+            "text": "Lobato"
+        },
+
+        {
+            "cidadeId": "4113700",
+            "text": "Londrina"
+        },
+
+        {
+            "cidadeId": "4113734",
+            "text": "Luiziana"
+        },
+
+        {
+            "cidadeId": "4113759",
+            "text": "Lunardelli"
+        },
+
+        {
+            "cidadeId": "4113809",
+            "text": "Lupionópolis"
+        },
+
+        {
+            "cidadeId": "4113908",
+            "text": "Mallet"
+        },
+
+        {
+            "cidadeId": "4114005",
+            "text": "Mambore"
+        },
+
+        {
+            "cidadeId": "4114104",
+            "text": "Mandaguaçu"
+        },
+
+        {
+            "cidadeId": "4114203",
+            "text": "Mandaguari"
+        },
+
+        {
+            "cidadeId": "4114302",
+            "text": "Mandirituba"
+        },
+
+        {
+            "cidadeId": "4114351",
+            "text": "Manfrinópolis"
+        },
+
+        {
+            "cidadeId": "4114401",
+            "text": "Mangueirinha"
+        },
+
+        {
+            "cidadeId": "4114500",
+            "text": "Manoel Ribas"
+        },
+
+        {
+            "cidadeId": "4114609",
+            "text": "Marechal Cândido Rondon"
+        },
+
+        {
+            "cidadeId": "4114708",
+            "text": "Maria Helena"
+        },
+
+        {
+            "cidadeId": "4114807",
+            "text": "Marialva"
+        },
+
+        {
+            "cidadeId": "4114906",
+            "text": "Marilândia do Sul"
+        },
+
+        {
+            "cidadeId": "4115002",
+            "text": "Marilena"
+        },
+
+        {
+            "cidadeId": "4115101",
+            "text": "Mariluz"
+        },
+
+        {
+            "cidadeId": "4115200",
+            "text": "Maringá"
+        },
+
+        {
+            "cidadeId": "4115309",
+            "text": "Mariópolis"
+        },
+
+        {
+            "cidadeId": "4115358",
+            "text": "Maripá"
+        },
+
+        {
+            "cidadeId": "4115408",
+            "text": "Marmeleiro"
+        },
+
+        {
+            "cidadeId": "4115457",
+            "text": "Marquinho"
+        },
+
+        {
+            "cidadeId": "4115507",
+            "text": "Marumbi"
+        },
+
+        {
+            "cidadeId": "4115606",
+            "text": "Matelândia"
+        },
+
+        {
+            "cidadeId": "4115705",
+            "text": "Matinhos"
+        },
+
+        {
+            "cidadeId": "4115739",
+            "text": "Mato Rico"
+        },
+
+        {
+            "cidadeId": "4115754",
+            "text": "Mauá da Serra"
+        },
+
+        {
+            "cidadeId": "4115804",
+            "text": "Medianeira"
+        },
+
+        {
+            "cidadeId": "4115853",
+            "text": "Mercedes"
+        },
+
+        {
+            "cidadeId": "4115903",
+            "text": "Mirador"
+        },
+
+        {
+            "cidadeId": "4116000",
+            "text": "Miraselva"
+        },
+
+        {
+            "cidadeId": "4116059",
+            "text": "Missal"
+        },
+
+        {
+            "cidadeId": "4116109",
+            "text": "Moreira Sales"
+        },
+
+        {
+            "cidadeId": "4116208",
+            "text": "Morretes"
+        },
+
+        {
+            "cidadeId": "4116307",
+            "text": "Munhoz De Melo"
+        },
+
+        {
+            "cidadeId": "4116406",
+            "text": "Nossa Senhora das Graças"
+        },
+
+        {
+            "cidadeId": "4116505",
+            "text": "Nova Aliança do Ivaí"
+        },
+
+        {
+            "cidadeId": "4116604",
+            "text": "Nova América da Colina"
+        },
+
+        {
+            "cidadeId": "4116703",
+            "text": "Nova Aurora"
+        },
+
+        {
+            "cidadeId": "4116802",
+            "text": "Nova Cantú"
+        },
+
+        {
+            "cidadeId": "4116901",
+            "text": "Nova Esperança"
+        },
+
+        {
+            "cidadeId": "4116950",
+            "text": "Nova Esperança do Sudoeste"
+        },
+
+        {
+            "cidadeId": "4117008",
+            "text": "Nova Fátima"
+        },
+
+        {
+            "cidadeId": "4117057",
+            "text": "Nova Laranjeiras"
+        },
+
+        {
+            "cidadeId": "4117107",
+            "text": "Nova Londrina"
+        },
+
+        {
+            "cidadeId": "4117206",
+            "text": "Nova Olímpia"
+        },
+
+        {
+            "cidadeId": "4117255",
+            "text": "Nova Prata do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4117214",
+            "text": "Nova Santa Bárbara"
+        },
+
+        {
+            "cidadeId": "4117222",
+            "text": "Nova Santa Rosa"
+        },
+
+        {
+            "cidadeId": "4117271",
+            "text": "Nova Tebas"
+        },
+
+        {
+            "cidadeId": "4117297",
+            "text": "Novo Itacolomi"
+        },
+
+        {
+            "cidadeId": "4117305",
+            "text": "Ortigueira"
+        },
+
+        {
+            "cidadeId": "4117404",
+            "text": "Ourizona"
+        },
+
+        {
+            "cidadeId": "4117453",
+            "text": "Ouro Verde do Oeste"
+        },
+
+        {
+            "cidadeId": "4117503",
+            "text": "Paicandu"
+        },
+
+        {
+            "cidadeId": "4117602",
+            "text": "Palmas"
+        },
+
+        {
+            "cidadeId": "4117701",
+            "text": "Palmeira"
+        },
+
+        {
+            "cidadeId": "4117800",
+            "text": "Palmital"
+        },
+
+        {
+            "cidadeId": "4117909",
+            "text": "Palotina"
+        },
+
+        {
+            "cidadeId": "4118006",
+            "text": "Paraíso do Norte"
+        },
+
+        {
+            "cidadeId": "4118105",
+            "text": "Paranacity"
+        },
+
+        {
+            "cidadeId": "4118204",
+            "text": "Paranaguá"
+        },
+
+        {
+            "cidadeId": "4118303",
+            "text": "Paranapoema"
+        },
+
+        {
+            "cidadeId": "4118402",
+            "text": "Paranavaí"
+        },
+
+        {
+            "cidadeId": "4118451",
+            "text": "Pato Bragado"
+        },
+
+        {
+            "cidadeId": "4118501",
+            "text": "Pato Branco"
+        },
+
+        {
+            "cidadeId": "4118600",
+            "text": "Paula Freitas"
+        },
+
+        {
+            "cidadeId": "4118709",
+            "text": "Paulo Frontin"
+        },
+
+        {
+            "cidadeId": "4118808",
+            "text": "Peabiru"
+        },
+
+        {
+            "cidadeId": "4118857",
+            "text": "Perobal"
+        },
+
+        {
+            "cidadeId": "4118907",
+            "text": "Pérola"
+        },
+
+        {
+            "cidadeId": "4119004",
+            "text": "Pérola Doeste"
+        },
+
+        {
+            "cidadeId": "4119103",
+            "text": "Pien"
+        },
+
+        {
+            "cidadeId": "4119152",
+            "text": "Pinhais"
+        },
+
+        {
+            "cidadeId": "4119251",
+            "text": "Pinhal de São Bento"
+        },
+
+        {
+            "cidadeId": "4119202",
+            "text": "Pinhalao"
+        },
+
+        {
+            "cidadeId": "4119301",
+            "text": "Pinhão"
+        },
+
+        {
+            "cidadeId": "4119400",
+            "text": "Piraí do Sul"
+        },
+
+        {
+            "cidadeId": "4119509",
+            "text": "Piraquara"
+        },
+
+        {
+            "cidadeId": "4119608",
+            "text": "Pitanga"
+        },
+
+        {
+            "cidadeId": "4119657",
+            "text": "Pitangueiras"
+        },
+
+        {
+            "cidadeId": "4119707",
+            "text": "Planaltina do Paraná"
+        },
+
+        {
+            "cidadeId": "4119806",
+            "text": "Planalto"
+        },
+
+        {
+            "cidadeId": "4119905",
+            "text": "Ponta Grossa"
+        },
+
+        {
+            "cidadeId": "4119954",
+            "text": "Pontal do Paraná"
+        },
+
+        {
+            "cidadeId": "4120002",
+            "text": "Porecatu"
+        },
+
+        {
+            "cidadeId": "4120101",
+            "text": "Porto Amazonas"
+        },
+
+        {
+            "cidadeId": "4120150",
+            "text": "Porto Barreiro"
+        },
+
+        {
+            "cidadeId": "4120200",
+            "text": "Porto Rico"
+        },
+
+        {
+            "cidadeId": "4120309",
+            "text": "Porto Vitória"
+        },
+
+        {
+            "cidadeId": "4120333",
+            "text": "Prado Ferreira"
+        },
+
+        {
+            "cidadeId": "4120358",
+            "text": "Pranchita"
+        },
+
+        {
+            "cidadeId": "4120408",
+            "text": "Presidente Castelo Branco"
+        },
+
+        {
+            "cidadeId": "4120507",
+            "text": "Primeiro de Maio"
+        },
+
+        {
+            "cidadeId": "4120606",
+            "text": "Prudentópolis"
+        },
+
+        {
+            "cidadeId": "4120655",
+            "text": "Quarto Centenário"
+        },
+
+        {
+            "cidadeId": "4120705",
+            "text": "Quatiguá"
+        },
+
+        {
+            "cidadeId": "4120804",
+            "text": "Quatro Barras"
+        },
+
+        {
+            "cidadeId": "4120853",
+            "text": "Quatro Pontes"
+        },
+
+        {
+            "cidadeId": "4120903",
+            "text": "Quedas do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4121000",
+            "text": "Querência do Norte"
+        },
+
+        {
+            "cidadeId": "4121109",
+            "text": "Quinta do Sol"
+        },
+
+        {
+            "cidadeId": "4121208",
+            "text": "Quitandinha"
+        },
+
+        {
+            "cidadeId": "4121257",
+            "text": "Ramilândia"
+        },
+
+        {
+            "cidadeId": "4121307",
+            "text": "Rancho Alegre"
+        },
+
+        {
+            "cidadeId": "4121356",
+            "text": "Rancho Alegre d'Oeste"
+        },
+
+        {
+            "cidadeId": "4121406",
+            "text": "Realeza"
+        },
+
+        {
+            "cidadeId": "4121505",
+            "text": "Rebouças"
+        },
+
+        {
+            "cidadeId": "4121604",
+            "text": "Renascença"
+        },
+
+        {
+            "cidadeId": "4121703",
+            "text": "Reserva"
+        },
+
+        {
+            "cidadeId": "4121752",
+            "text": "Reserva do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4121802",
+            "text": "Ribeirão Claro"
+        },
+
+        {
+            "cidadeId": "4121901",
+            "text": "Ribeirão do Pinhal"
+        },
+
+        {
+            "cidadeId": "4122008",
+            "text": "Rio Azul"
+        },
+
+        {
+            "cidadeId": "4122107",
+            "text": "Rio Bom"
+        },
+
+        {
+            "cidadeId": "4122156",
+            "text": "Rio Bonito do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4122172",
+            "text": "Rio Branco do Ivaí"
+        },
+
+        {
+            "cidadeId": "4122206",
+            "text": "Rio Branco do Sul"
+        },
+
+        {
+            "cidadeId": "4122305",
+            "text": "Rio Negro"
+        },
+
+        {
+            "cidadeId": "4122404",
+            "text": "Rolândia"
+        },
+
+        {
+            "cidadeId": "4122503",
+            "text": "Roncador"
+        },
+
+        {
+            "cidadeId": "4122602",
+            "text": "Rondon"
+        },
+
+        {
+            "cidadeId": "4122651",
+            "text": "Rosário do Ivaí"
+        },
+
+        {
+            "cidadeId": "4122701",
+            "text": "Sabaudia"
+        },
+
+        {
+            "cidadeId": "4122800",
+            "text": "Salgado Filho"
+        },
+
+        {
+            "cidadeId": "4122909",
+            "text": "Salto do Itararé"
+        },
+
+        {
+            "cidadeId": "4123006",
+            "text": "Salto do Lontra"
+        },
+
+        {
+            "cidadeId": "4123105",
+            "text": "Santa Amélia"
+        },
+
+        {
+            "cidadeId": "4123204",
+            "text": "Santa Cecília do Pavão"
+        },
+
+        {
+            "cidadeId": "4123303",
+            "text": "Santa Cruz Monte Castelo"
+        },
+
+        {
+            "cidadeId": "4123402",
+            "text": "Santa Fé"
+        },
+
+        {
+            "cidadeId": "4123501",
+            "text": "Santa Helena"
+        },
+
+        {
+            "cidadeId": "4123600",
+            "text": "Santa Inês"
+        },
+
+        {
+            "cidadeId": "4123709",
+            "text": "Santa Isabel do Ivaí"
+        },
+
+        {
+            "cidadeId": "4123808",
+            "text": "Santa Izabel do Oeste"
+        },
+
+        {
+            "cidadeId": "4123824",
+            "text": "Santa Lúcia"
+        },
+
+        {
+            "cidadeId": "4123857",
+            "text": "Santa Maria do Oeste"
+        },
+
+        {
+            "cidadeId": "4123907",
+            "text": "Santa Mariana"
+        },
+
+        {
+            "cidadeId": "4123956",
+            "text": "Santa Mônica"
+        },
+
+        {
+            "cidadeId": "4124020",
+            "text": "Santa Tereza do Oeste"
+        },
+
+        {
+            "cidadeId": "4124053",
+            "text": "Santa Terezinha de Itaipú"
+        },
+
+        {
+            "cidadeId": "4124004",
+            "text": "Santana do Itararé"
+        },
+
+        {
+            "cidadeId": "4124103",
+            "text": "Santo Antônio da Platina"
+        },
+
+        {
+            "cidadeId": "4124202",
+            "text": "Santo Antônio do Caiuá"
+        },
+
+        {
+            "cidadeId": "4124301",
+            "text": "Santo Antônio do Paraíso"
+        },
+
+        {
+            "cidadeId": "4124400",
+            "text": "Santo Antônio do Sudoeste"
+        },
+
+        {
+            "cidadeId": "4124509",
+            "text": "Santo Inácio"
+        },
+
+        {
+            "cidadeId": "4124608",
+            "text": "São Carlos do Ivaí"
+        },
+
+        {
+            "cidadeId": "4124707",
+            "text": "São Jerônimo da Serra"
+        },
+
+        {
+            "cidadeId": "4124806",
+            "text": "São João"
+        },
+
+        {
+            "cidadeId": "4124905",
+            "text": "São João do Caiua"
+        },
+
+        {
+            "cidadeId": "4125001",
+            "text": "São João do Ivaí"
+        },
+
+        {
+            "cidadeId": "4125100",
+            "text": "São João do Triunfo"
+        },
+
+        {
+            "cidadeId": "4125308",
+            "text": "São Jorge do Ivaí"
+        },
+
+        {
+            "cidadeId": "4125357",
+            "text": "São Jorge do Patrocínio"
+        },
+
+        {
+            "cidadeId": "4125209",
+            "text": "São Jorge Doeste"
+        },
+
+        {
+            "cidadeId": "4125407",
+            "text": "São José da Boa Vista"
+        },
+
+        {
+            "cidadeId": "4125456",
+            "text": "São José das Palmeiras"
+        },
+
+        {
+            "cidadeId": "4125506",
+            "text": "São José dos Pinhais"
+        },
+
+        {
+            "cidadeId": "4125555",
+            "text": "São Manoel do Paraná"
+        },
+
+        {
+            "cidadeId": "4125605",
+            "text": "São Mateus do Sul"
+        },
+
+        {
+            "cidadeId": "4125704",
+            "text": "São Miguel do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4125753",
+            "text": "São Pedro do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4125803",
+            "text": "São Pedro do Ivaí"
+        },
+
+        {
+            "cidadeId": "4125902",
+            "text": "São Pedro do Paraná"
+        },
+
+        {
+            "cidadeId": "4126009",
+            "text": "São Sebastião da Amoreira"
+        },
+
+        {
+            "cidadeId": "4126108",
+            "text": "São Tomé"
+        },
+
+        {
+            "cidadeId": "4126207",
+            "text": "Sapopema"
+        },
+
+        {
+            "cidadeId": "4126256",
+            "text": "Sarandi"
+        },
+
+        {
+            "cidadeId": "4126272",
+            "text": "Saudade do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4126306",
+            "text": "Sengés"
+        },
+
+        {
+            "cidadeId": "4126355",
+            "text": "Serranópolis do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4126405",
+            "text": "Sertaneja"
+        },
+
+        {
+            "cidadeId": "4126504",
+            "text": "Sertanópolis"
+        },
+
+        {
+            "cidadeId": "4126603",
+            "text": "Siqueira Campos"
+        },
+
+        {
+            "cidadeId": "4126652",
+            "text": "Sulina"
+        },
+
+        {
+            "cidadeId": "4126678",
+            "text": "Tamarana"
+        },
+
+        {
+            "cidadeId": "4126702",
+            "text": "Tamboara"
+        },
+
+        {
+            "cidadeId": "4126801",
+            "text": "Tapejara"
+        },
+
+        {
+            "cidadeId": "4126900",
+            "text": "Tapira"
+        },
+
+        {
+            "cidadeId": "4127007",
+            "text": "Teixeira Soares"
+        },
+
+        {
+            "cidadeId": "4127106",
+            "text": "Telêmaco Borba"
+        },
+
+        {
+            "cidadeId": "4127205",
+            "text": "Terra Boa"
+        },
+
+        {
+            "cidadeId": "4127304",
+            "text": "Terra Rica"
+        },
+
+        {
+            "cidadeId": "4127403",
+            "text": "Terra Roxa"
+        },
+
+        {
+            "cidadeId": "4127502",
+            "text": "Tibagi"
+        },
+
+        {
+            "cidadeId": "4127601",
+            "text": "Tijucas do Sul"
+        },
+
+        {
+            "cidadeId": "4127700",
+            "text": "Toledo"
+        },
+
+        {
+            "cidadeId": "4127809",
+            "text": "Tomazina"
+        },
+
+        {
+            "cidadeId": "4127858",
+            "text": "Três Barras do Paraná"
+        },
+
+        {
+            "cidadeId": "4127882",
+            "text": "Tunas do Paraná"
+        },
+
+        {
+            "cidadeId": "4127908",
+            "text": "Tuneiras do Oeste"
+        },
+
+        {
+            "cidadeId": "4127957",
+            "text": "Tupassi"
+        },
+
+        {
+            "cidadeId": "4127965",
+            "text": "Turvo"
+        },
+
+        {
+            "cidadeId": "4128005",
+            "text": "Ubirata"
+        },
+
+        {
+            "cidadeId": "4128104",
+            "text": "Umuarama"
+        },
+
+        {
+            "cidadeId": "4128203",
+            "text": "União da Vitória"
+        },
+
+        {
+            "cidadeId": "4128302",
+            "text": "Uniflor"
+        },
+
+        {
+            "cidadeId": "4128401",
+            "text": "Urai"
+        },
+
+        {
+            "cidadeId": "4128534",
+            "text": "Ventania"
+        },
+
+        {
+            "cidadeId": "4128559",
+            "text": "Vera Cruz do Oeste"
+        },
+
+        {
+            "cidadeId": "4128609",
+            "text": "Verê"
+        },
+
+        {
+            "cidadeId": "4128658",
+            "text": "Virmond"
+        },
+
+        {
+            "cidadeId": "4128708",
+            "text": "Vitorino"
+        },
+
+        {
+            "cidadeId": "4128500",
+            "text": "Wenceslau Braz"
+        },
+
+        {
+            "cidadeId": "4128807",
+            "text": "Xambre"
+        }
+
+]
+}
