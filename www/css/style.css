@@ -1,15 +1,29 @@
 /* Empty. Add your own CSS if you like */
 
 .imagens-background {
-    background-image: url('../img/praia.jpg');
+    /*background-image: url('../img/praia.jpg');*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
+    background-position: center;
 }
 
 .item-transparente {
-    opacity: .75;
+    /*opacity: .75;*/
+/*    background: rgb(0, 0, 0) transparent;*/
+/*background: rgba(0, 0, 0, 0.7);*/
+    /*background: rgba(76, 175, 80, 0.1) */
+/*background-color: rgba(0, 0, 0, 0.1);*/
+/*background-color: transparent;*/
+    opacity: .7;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: white; 
+}
+
+.p h1 h2 h3 h4 h5 h6 {
+     opacity: 1;
 }
 
 .content-box {
@@ -183,6 +197,23 @@
 /* The z-index Select2 applies to the select2-drop 
   z-index: 9999; 
 /*}*/
+
+#grafico {
+    
+    /*width: 800px;*/
+    /*height: 600px;*/
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#grafico img {
+max-width:100%;
+/*    position: absolute;*/
+/*    top: -4px;*/
+/*    left: 0px;*/
+}
 
 #grafico1 {
     width: 370px;

@@ -69,40 +69,34 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 })
 
 
-.controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation) {
+.controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation, $sce) {
 
-    // // $scope.imgFundo = "alagado";
-    // var imagemEscolha = "alagado";
-    // $scope.imgFundo = "'../img/" + imagemEscolha + ".jpg'";
-    // // $scope.imgFundo = "url('../img/" + imagemEscolha + ".jpg')";
-    // $scope.imgGrama = function (color) {
-    //     // imagemEscolha = "grama";
-    //     $scope.imgFundo = "'../img/" + imagemEscolha + ".jpg'";
-    //     // $scope.imgFundo = "url('../img/" + imagemEscolha + ".jpg')";
-    //     // $scope.imgFundo = "grama";
-    // }
+    // Definindo Cidade Padrão (Upgrade)
     
-    // $scope.fundao = "background-image: url('../img/alagado.jpg');"
-
     $scope.cidadePrevi = {
         cidadeId: '4104808',
-        text: "Cascavel (Atual)"
+        text: "Cascavel (Atual-Emulado)"
     };
 
+    // Buscando lista de cidades do Paraná
+    
     $http.get("/js/cidades.json").success(function (data) {
         $scope.listaCidades = data.data;
-        $scope.findValue()
+        $scope.buscaIdCidade()
     });
 
+    // GeoLocalização - Busca da Posição pelo $cordovaGeoLocation - Início
+    // Configuração do Plugin
 
-
-    console.log("teste");
     var posOptions = {
         timeout: 10000,
         enableHighAccuracy: false
     };
-    var buscaLocal = function () {
-        console.log("Rodando local OK");
+
+    // Buscando localização por gps
+
+    $scope.buscaLocal = function () {
+        console.log("Buscando local");
         $cordovaGeolocation
             .getCurrentPosition(posOptions)
             .then(function (position) {
@@ -113,23 +107,21 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
                 console.log("Erro no local")
                     // error
             });
-        console.log("chamando")
-    }
+    };
+
+    // Buscando nome da cidade no WebService do OpenStreetMap
+    
     var buscaCidadeJson = function (lat, long) {
         $http.get("http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json").success(function (data) {
             //  http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json&json_callback=my_callback"
             $scope.cidade = data.address.city
-            $scope.findValue();
+            $scope.buscaIdCidade();
         });
     };
 
-    buscaLocal();
-
-
-
-
-
-    $scope.findValue = function () {
+    // Buscando o ID da cidade na lista de cidades do escopo/menu (Upgrade para buscar do json/xml)
+    
+    $scope.buscaIdCidade = function () {
         angular.forEach($scope.listaCidades, function (item) {
             if (item.text === $scope.cidade) {
                 $scope.cidadePrevi = {
@@ -141,54 +133,148 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         });
 
     }
+    
+    
+    // NAO IDENTIFICADO?
 
-    $scope.palavraRes = false;
+    // $scope.palavraRes = false;
 
-    $scope.palavra = function () {
+    // $scope.palavra = function () {
+    //     $scope.palavraRes = !$scope.palavraRes;
+    // };
 
-        $scope.palavraRes = !$scope.palavraRes;
 
 
-    };
+    // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
 
     $scope.doRefresh = function () {
 
         $scope.init();
-        $scope.imgGrama();
+
+        $scope.trocaImagemFundo();
 
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
 
+        $scope.baixaDivs();
 
     };
 
+    // Funcionalidade de imagens de fundo
+    
+    // Lista de imagens
 
+    var listaImagensFundo = ["alagado.jpg", "flor.jpg", "grama.jpg", "praia.jpg"];
+
+    // Random imagem e troca do link
+    
+    $scope.trocaImagemFundo = function () {
+        var num = Math.floor(Math.random() * listaImagensFundo.length);
+        var img = listaImagensFundo[num];
+        var imagemFundo = {
+            'background-image': 'url(../img/' + img + ')'
+        };
+        $scope.imagemFundo = imagemFundo;
+        console.log(imagemFundo);
+
+        // var imgFundoUrl = "../img/"+ img;
+        // console.log(imgFundoUrl)
+    }
+
+    // Helper para o ng-style="retornaImgFundo()" do HTML
+    
+    $scope.retornaImgFundo = function () {
+        var imagemFundo = $scope.imagemFundo;
+        return imagemFundo;
+    }
+
+    // Funções de inicialização do controller
+    
     $scope.init = function () {
         $scope.baixaXml();
         $scope.plataforma = ionic.Platform.platform();
+        $scope.buscaLocal();
+        $scope.trocaImagemFundo();
+        
+    };
+    
+    // Função de troca de cidade ao escolher no drop-down do HTML
+
+    $scope.trocaCidade = function (id, nome) {
+        $scope.cidadePrevi.cidadeId = id;
+        $scope.cidadePrevi.text = nome;
+        $scope.baixaXml();
     }
 
+    // Função de captura de dados do HTML externo
+
+    $scope.baixaDivs = function () {
+        // $http.get("http://www.simepar.br/mobile/").then(
+        $http.get("http://www.simepar.br/mobile/fragmentos/condicoes_atuais/PR/4104808.html").then(
+            // success handler
+            function (response) {
+                var data = response.data,
+                    status = response.status,
+                    header = response.header,
+                    config = response.config;
+                //console.log(response.data);
+
+
+                var el = document.createElement('html');
+                el.innerHTML = data;
+
+                var tempAtualBruto = el.getElementsByClassName('tempChuva')[0].childNodes[2].data;
+                var chuvaBruto = el.getElementsByClassName('tempChuva')[0].childNodes[6].data;
+                var urBruto = el.getElementsByClassName('ur')[0].childNodes[0].data;
+                var ventoBruto = el.getElementsByClassName('vento')[0].childNodes[0].data;
+
+                var tempAtual = tempAtualBruto.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+                var chuva = chuvaBruto.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+                var ur = urBruto.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+                var vento = ventoBruto.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+                // var vento = ventoBruto.replace(/\s{2,}/g, ' ');
+                // str.replace(/^\s+/,"");
+                console.log("Temp:"+ tempAtual + "  Chuva:"+chuva+"  UR:"+ur+"  Vento:"+vento);
+
+                //   console.log(el.getElementsByClassName( 'vento' ));
+                //   console.log(el.getElementsByClassName( 'ur' ));
+                //   console.log(el.getElementsByClassName( 'tempChuva' ));
+                //   console.log("------------");
+                //   console.log(el.getElementsByClassName( 'tempChuva' )[0]);
+                //   console.log("------------");
+                //   console.log(el.getElementsByClassName( 'tempChuva' )[0].childNodes[2].data);
+                //   $scope.t = $sce.trustAsHtml(data);
+                //   console.log($scope.t);
+
+
+                //var mydiv = data.document.getElementsByClassName("condicaoAtual");
+                // var alguma = $("#vento").load("http://www.simepar.br/mobile/");
+                //console.log(mydiv);
+            },
+            // error handler
+            function (response) {
+                var data = response.data,
+                    status = response.status,
+                    header = response.header,
+                    config = response.config;
+                //console.log(response.data);
+            });
+    }
+    
+    // Função de baixar o XML da previsão e chamar o parser personalizado
 
     $scope.baixaXml = function () {
-        //$scope.baixaXml = function (id, nome) {
-
-        // if (id != null) {
-        //     $scope.cidadePrevi.cidadeId = id;
-        //     $scope.cidadePrevi.text = nome;
-        // };
 
         $http.get("http://www.simepar.br/tempo2/xml/PR/" + $scope.cidadePrevi.cidadeId + ".xml").success(function (data) {
             var x2js = new X2JS();
             var jsonData = x2js.xml_str2json(data);
 
-            //console.log(jsonData);
-
             carregaXml(jsonData);
-
-
 
         });
     }
+    
+    // Capturar e selecionar dados do XML baixado
 
     var carregaXml = function (jsonData) {
 
@@ -471,6 +557,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         {
             text: "Cascavel",
             estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png"
+                // estacaoId: "24535333"
         },
         {
             text: "Curitiba",
@@ -490,9 +577,13 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         }
   ];
 
+    $scope.trocaGraficos = function (estacaoId) {
+        $scope.data.estacaoId = estacaoId;
+    }
 
     $scope.data = {
         estacaoId: 'http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png'
+            // estacaoId: "24535333"
     };
 
 

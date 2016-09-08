@@ -2,7 +2,7 @@
   
   <ion-nav-buttons side="right">
     <h5>Estação: &nbsp</h5>
-    <select class="item item-input item-select" ng-model="data.estacaoId" ng-options="item.estacaoId as item.text for item in listaEstacao">
+    <select class="item item-input item-select" ng-model="data.estacaoId" ng-options="item.estacaoId as item.text for item in listaEstacao" on-select="trocaGraficos($select.selected.estacaoId)">
     </select>
   </ion-nav-buttons>
   
@@ -12,7 +12,7 @@
 <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" show-pager="true">
 <ion-slide>
   <div id="grafico1">
-    <img ng-src="{{data.estacaoId}}" />
+    <img ng-src="{{data.estacaoId}}"/>
   </div>
 </ion-slide>
 <ion-slide>
