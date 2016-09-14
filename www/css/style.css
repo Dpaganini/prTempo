@@ -6,24 +6,27 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
     background-position: center;
 }
 
 .item-transparente {
     /*opacity: .75;*/
-/*    background: rgb(0, 0, 0) transparent;*/
-/*background: rgba(0, 0, 0, 0.7);*/
+    /*    background: rgb(0, 0, 0) transparent;*/
+    /*background: rgba(0, 0, 0, 0.7);*/
     /*background: rgba(76, 175, 80, 0.1) */
-/*background-color: rgba(0, 0, 0, 0.1);*/
-/*background-color: transparent;*/
-    opacity: .7;
-	background-color: rgba(0, 0, 0, 0.1);
-	color: white; 
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    /*background-color: transparent;*/
+    opacity: .8;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.vertical-align {
+    vertical-align: middle;
 }
 
 .p h1 h2 h3 h4 h5 h6 {
-     opacity: 1;
+    opacity: 1;
 }
 
 .content-box {
@@ -40,166 +43,7 @@
     width: 100%;
 }
 
-
-/*.ui-select-highlight {*/
-
-
-/*  font-weight: bold;*/
-
-
-/*}*/
-
-
-/*.ui-select-offscreen {*/
-
-
-/*  clip: rect(0 0 0 0) !important;*/
-
-
-/*  width: 1px !important;*/
-
-
-/*  height: 1px !important;*/
-
-
-/*  border: 0 !important;*/
-
-
-/*  margin: 0 !important;*/
-
-
-/*  padding: 0 !important;*/
-
-
-/*  overflow: hidden !important;*/
-
-
-/*  position: absolute !important;*/
-
-
-/*  outline: 0 !important;*/
-
-
-/*  left: 0px !important;*/
-
-
-/*  top: 0px !important;*/
-
-
-/*}*/
-
-
-/*.input-dropdown {*/
-
-
-/*    position: relative;*/
-
-
-/*    display: inline-block;*/
-
-
-/*}*/
-
-
-/*.input-dropdown .dropdown {*/
-
-
-/*    display: none;*/
-
-
-/*    position: absolute;*/
-
-
-/*    top: 100%;*/
-
-
-/*    left: 0;*/
-
-
-/*    width: 100%;*/
-
-
-/*    margin-top: 2px;*/
-
-
-/*    background: #EEE;*/
-
-
-/*}*/
-
-
-/*.input-dropdown .dropdown div {*/
-
-
-/*    cursor: pointer;*/
-
-
-/*    padding: 2px 5px;*/
-
-
-/*}*/
-
-
-/*.input-dropdown input:focus + .dropdown {*/
-
-
-/*    display: block;*/
-
-
-/*}*/
-
-
-/* Select2 theme */
-
-
-/* Mark invalid Select2 */
-
-
-/*.ng-dirty.ng-invalid > a.select2-choice {*/
-
-
-/*    border-color: #D44950;*/
-
-
-/*}*/
-
-
-/*.select2-result-single {*/
-
-
-/*  padding-left: 0;*/
-
-
-/*}*/
-
-
-/*.select2-locked > .select2-search-choice-close{*/
-
-
-/*  display:none;*/
-
-
-/*}*/
-
-
-/*.select-locked > .ui-select-match-close{*/
-
-
-/*    display:none;*/
-
-
-/*}*/
-
-
-/*body > .select2-container.open {*/
-
-
-/* The z-index Select2 applies to the select2-drop 
-  z-index: 9999; 
-/*}*/
-
 #grafico {
-    
     /*width: 800px;*/
     /*height: 600px;*/
     overflow: hidden;
@@ -209,13 +53,14 @@
 }
 
 #grafico img {
-max-width:100%;
-/*    position: absolute;*/
-/*    top: -4px;*/
-/*    left: 0px;*/
+    max-width: 100%;
+    /*    position: absolute;*/
+    /*    top: -4px;*/
+    /*    left: 0px;*/
 }
 
 #grafico1 {
+    max-width: 100%;
     width: 370px;
     height: 360px;
     overflow: hidden;
@@ -225,12 +70,14 @@ max-width:100%;
 }
 
 #grafico1 img {
+    
     position: absolute;
     top: -4px;
     left: 0px;
 }
 
 #grafico2 {
+    max-width: 100%;
     width: 370px;
     height: 364px;
     overflow: hidden;
@@ -240,12 +87,14 @@ max-width:100%;
 }
 
 #grafico2 img {
+    
     position: absolute;
     top: 0px;
     left: -380px;
 }
 
 #grafico3 {
+    max-width: 100%;
     width: 370px;
     height: 356px;
     overflow: hidden;
@@ -255,12 +104,14 @@ max-width:100%;
 }
 
 #grafico3 img {
+    
     position: absolute;
     top: -360px;
     left: 0px;
 }
 
 #grafico4 {
+    max-width: 100%;
     width: 370px;
     height: 360px;
     overflow: hidden;
@@ -270,12 +121,14 @@ max-width:100%;
 }
 
 #grafico4 img {
+    
     position: absolute;
     top: -360px;
     left: -375px;
 }
 
 #grafico5 {
+    max-width: 100%;
     width: 370px;
     height: 356px;
     overflow: hidden;
@@ -285,12 +138,14 @@ max-width:100%;
 }
 
 #grafico5 img {
+    
     position: absolute;
     top: -712px;
     left: 0px;
 }
 
 #grafico6 {
+    max-width: 100%;
     width: 370px;
     height: 356px;
     overflow: hidden;

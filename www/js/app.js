@@ -22,7 +22,11 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'starter.controllers',
         }
       });
 
-
+ $ionicPlatform.onHardwareBackButton(function(){
+             
+                 //Exit app
+                 ionic.Platform.exitApp();
+             });
 //iniciu
 
       // var posOptions = {

@@ -1,46 +1,86 @@
-<ion-view view-title="Paraná Tempo" cache-view="false" ng-controller="AgoraCtrl">
-  
+<ion-view view-title="Paraná Tempo" ng-controller="AgoraCtrl" class="imagens-background" ng-style="retornaImgFundoAgora()">
+
+  <!--NAV BAR com select de cidades-->
   <ion-nav-buttons side="right">
-    <h5>Estação: &nbsp</h5>
-    <select class="item item-input item-select" ng-model="data.estacaoId" ng-options="item.estacaoId as item.text for item in listaEstacao" on-select="trocaGraficos($select.selected.estacaoId)">
-    </select>
+    <ui-select ng-model="cidadeEstacao" theme="select2" style="min-width: 150px;" title="Cidade" on-select="trocaEstacao($select.selected.cidadeId,$select.selected.graficoId,$select.selected.text)">
+      <ui-select-match placeholder="Selecione ou busque uma cidade na lista...">{{$select.selected.text}}</ui-select-match>
+      <ui-select-choices repeat="item in listaEstacoes | filter: {text: $select.search}">
+        <span ng-bind-html="item.text | highlight: $select.search"></span>
+      </ui-select-choices>
+    </ui-select>
   </ion-nav-buttons>
-  
-  <ion-content scroll="true">
+
+
+
+  <ion-content class="padding item-transparente">
     <ion-refresher on-refresh="doRefresh()" spinner="lines">
-    </ion-refresher> 
-<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" show-pager="true">
-<ion-slide>
-  <div id="grafico1">
-    <img ng-src="{{data.estacaoId}}"/>
-  </div>
-</ion-slide>
-<ion-slide>
-  <div id="grafico2">
-    <img ng-src="{{data.estacaoId}}" />
-  </div>
-</ion-slide>
-<ion-slide>
-  <div id="grafico3">
-    <img ng-src="{{data.estacaoId}}" />
-  </div>
-</ion-slide>
-<ion-slide>
-  <div id="grafico4">
-    <img ng-src="{{data.estacaoId}}" />
-  </div>
-</ion-slide>
-<ion-slide>
-  <div id="grafico5">
-    <img ng-src="{{data.estacaoId}}" />
-  </div>
-</ion-slide>
-<ion-slide>
-  <div id="grafico6">
-    <img ng-src="{{data.estacaoId}}" />
-  </div>
-</ion-slide>
- 
-</ion-slide-box>
+    </ion-refresher>
+
+    <div class="list card">
+      <div align="center" class="row item-divider">
+        <!--<h4>{{cidadePrevi.text}}</h4>-->
+        <!--</div>-->
+        <!--<div align="center" class="row">-->
+        <div class="col">
+          <h6>Temperatura:</h6>
+          <h4>{{tempAtual}}</h4>
+        </div>
+        <div class="col">
+          <h6>Chuva:</h6>
+          <h4>{{chuva}}</h4>
+        </div>
+        <div class="col">
+          <h6>Umidade Relativa:</h6>
+          <h4>{{ur}}</h4>
+        </div>
+        <div class="col">
+          <h6>Vento:</h6>
+          <h4>{{vento}}</h4>
+        </div>
+      </div>
+
+      <!--  <div class="item row col" align="center">-->
+      <!--<ion-nav-buttons side="right">-->
+      <!--<h4>Estação: &nbsp</h4>-->
+      <!--    <select class="item item-input item-select" ng-model="data.estacaoId" ng-options="item.estacaoId as item.text for item in listaEstacao" on-select="trocaGraficos($select.selected.estacaoId)">-->
+      <!--</select>-->
+      <!--  </div>-->
+      <!--</ion-nav-buttons>-->
+
+      <div class="item row">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true" show-pager="true">
+          <ion-slide>
+            <div id="grafico1">
+              <img ng-src="{{data.estacaoId}}" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div id="grafico2">
+              <img ng-src="{{data.estacaoId}}" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div id="grafico3">
+              <img ng-src="{{data.estacaoId}}" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div id="grafico4">
+              <img ng-src="{{data.estacaoId}}" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div id="grafico5">
+              <img ng-src="{{data.estacaoId}}" />
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div id="grafico6">
+              <img ng-src="{{data.estacaoId}}" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
