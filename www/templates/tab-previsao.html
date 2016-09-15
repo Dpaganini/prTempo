@@ -82,15 +82,23 @@
     <!--SEÇÃO PREVISÃO AMANHA/DIA2-->
     <div class="list card" ng-if="!prev2_legendadia2">
       <div class="row item-divider">
-        <div>
+        <div class="col">
           <h4>{{prev2_Data +" - "+prev2_Semana+"."}}</h4>
         </div>
-        <div class="col" align="center">
-          <h3><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}</h3>
+        <div class="col">
+          <h4><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}
+            &emsp;
+           <i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h4>
         </div>
-        <div class="col" align="center">
-          <h3><i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h3>
-        </div>
+        <!--<div>-->
+        <!--  <h4>{{prev2_Data +" - "+prev2_Semana+"."}}</h4>-->
+        <!--</div>-->
+        <!--<div class="col" align="center">-->
+        <!--  <h3><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}</h3>-->
+        <!--</div>-->
+        <!--<div class="col" align="center">-->
+        <!--  <h3><i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h3>-->
+        <!--</div>-->
       </div>
 
       <div ng-if="madrugada2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_MadrugadaIcone}}" />

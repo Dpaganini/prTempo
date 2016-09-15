@@ -70,8 +70,29 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 .controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation, $sce, $rootScope) {
 
-    // Definindo Cidade Padrão (Upgrade)
+    // Funções de inicialização do controller
+    $scope.init = function () {
+        $scope.baixaXml();
+        $scope.plataforma = ionic.Platform.platform();
+        $scope.buscaLocal();
+        $scope.trocaImagemFundo();
+    };
 
+    // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
+    $scope.doRefresh = function () {
+
+        $scope.init();
+
+        $scope.trocaImagemFundo();
+
+        //Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+
+
+    };
+
+
+    // Definindo Cidade Padrão (Upgrade)
     $rootScope.cidadePrevi = {
         cidadeId: '4104808',
         text: "Cascavel (Atual-Emulado)"
@@ -92,14 +113,12 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // GeoLocalização - Busca da Posição pelo $cordovaGeoLocation - Início
     // Configuração do Plugin
-
     var posOptions = {
         timeout: 10000,
         enableHighAccuracy: false
     };
 
     // Buscando localização por gps
-
     $scope.buscaLocal = function () {
         console.log("Buscando local");
         $cordovaGeolocation
@@ -115,7 +134,6 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     };
 
     // Buscando nome da cidade no WebService do OpenStreetMap
-
     var buscaCidadeJson = function (lat, long) {
         $http.get("http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json").success(function (data) {
             //  http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json&json_callback=my_callback"
@@ -125,7 +143,6 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     };
 
     // Buscando o ID da cidade na lista de cidades do escopo/menu (Upgrade para buscar do json/xml)
-
     $scope.buscaIdCidade = function () {
         angular.forEach($rootScope.listaCidades, function (item) {
             if (item.text === $scope.cidade) {
@@ -139,39 +156,19 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     }
 
-
     // Para UI saber se collapse da palavra do metereologista está ativo ou não - VERIFICAR
-
     $scope.palavraRes = false;
-
     $scope.palavra = function () {
         $scope.palavraRes = !$scope.palavraRes;
     };
 
 
-
-    // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
-
-    $scope.doRefresh = function () {
-
-        $scope.init();
-
-        $scope.trocaImagemFundo();
-
-        //Stop the ion-refresher from spinning
-        $scope.$broadcast('scroll.refreshComplete');
-
-
-    };
-
     // Funcionalidade de imagens de fundo
-
     // Lista de imagens
-
     var listaImagensFundo = ["alagado.jpg", "flor.jpg", "grama.jpg", "praia.jpg"];
     $scope.numImagemFundo = {}
-        // Random imagem e troca do link
 
+    // Random imagem e troca do link
     $scope.trocaImagemFundo = function () {
         var num = Math.floor(Math.random() * listaImagensFundo.length);
         if ($scope.numImagemFundo == num) {
@@ -188,23 +185,12 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     }
 
     // Helper para o ng-style="retornaImgFundo()" do HTML
-
     $scope.retornaImgFundo = function () {
         var imagemFundo = $scope.imagemFundo;
         return imagemFundo;
     }
 
-    // Funções de inicialização do controller
-
-    $scope.init = function () {
-        $scope.baixaXml();
-        $scope.plataforma = ionic.Platform.platform();
-        $scope.buscaLocal();
-        $scope.trocaImagemFundo();
-    };
-
     // Função de troca de cidade ao escolher no drop-down do HTML
-
     $rootScope.trocaCidade = function (id, nome) {
         $rootScope.cidadePrevi.cidadeId = id;
         $rootScope.cidadePrevi.text = nome;
@@ -212,9 +198,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     }
 
 
-
     // Função de baixar o XML da previsão e chamar o parser personalizado
-
     $scope.baixaXml = function () {
 
         $http.get("http://www.simepar.br/tempo2/xml/PR/" + $rootScope.cidadePrevi.cidadeId + ".xml").success(function (data) {
@@ -227,7 +211,6 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     }
 
     // Capturar e selecionar dados do XML baixado
-
     var carregaXml = function (jsonData) {
 
         $scope.munNome = jsonData.boletim.municipio._nome;
@@ -447,6 +430,8 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     }
 
+
+    // CHAMANDO INICIALIZADOR
     $scope.init()
 
 
@@ -455,75 +440,78 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 .controller('AgoraCtrl', function ($scope, $state, $http, $rootScope) {
 
-    $rootScope.cidadeEstacao = {
-        cidadeId: '4104808',
-        graficoId: '24535333',
-        text: "Cascavel (Atual-E-Emulado)"
-    };
-
-    //     $scope.listaEstacao = [
-    //         {
-    //             text: "Cascavel",
-    //             estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png"
-    //                 // estacaoId: "24535333"
-    //         },
-    //         {
-    //             text: "Curitiba",
-    //             estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/25264916.png"
-    //         },
-    //         {
-    //             text: "Foz do Iguaçu",
-    //             estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/25245437.png"
-    //         },
-    //         {
-    //             text: "Toledo",
-    //             estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/24475343.png"
-    //         },
-    //         {
-    //             text: "Maringá",
-    //             estacaoId: "http://www.simepar.br/site/imagens/graficos_condicoes/23275159.png"
-    //         }
-    //   ];
-
-    $http.get("js/cidadesEstacoes.json").success(function (data) {
-        $scope.listaEstacoes = data.data;
-    });
-
-    $rootScope.trocaEstacao = function (id, estId, nome) {
-        $rootScope.cidadeEstacao.cidadeId = id;
-        $rootScope.cidadeEstacao.graficoId = estId;
-        $rootScope.cidadeEstacao.text = nome;
-        $scope.trocaGraficos(estId);
+    // COMANDOS AO INICIALIZAR
+    $scope.init = function () {
+        $scope.trocaImagemFundoAgora();
+        $scope.declaraCidadeEstacao();
+        // $scope.buscaJsonEstacoes();
+        $scope.buscaIdEstacao();
         $scope.baixaDivs();
-        
+        $scope.trocaGraficos();
     }
 
-    $scope.trocaGraficos = function (estacaoId) {
-        $scope.data.estacaoId = "http://www.simepar.br/site/imagens/graficos_condicoes/" + estacaoId + ".png";
-    }
-
-    $scope.data = {
-        estacaoId: 'http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png'
-            // estacaoId: "24535333"
-    };
-
-
-
+    // COMANDOS AO ATUALIZAR
     $scope.doRefresh = function () {
+        $scope.buscaIdEstacao();
+        $scope.trocaImagemFundoAgora();
         $scope.baixaDivs();
-        
+        $scope.trocaGraficos();
         $state.go($state.current, {}, {
             reload: true
         });
-        $scope.trocaImagemFundoAgora();
-        console.log($scope.imagemFundoAgora);
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
-
     };
 
-    // Função de captura de dados do HTML externo
+    // DECLARAÇÃO DE VARIÁVEIS REFERENTES A ESTAÇÃO/CIDADE
+    $scope.declaraCidadeEstacao = function () {
+        $rootScope.cidadeEstacao = {
+            cidadeId: '4104808',
+            graficoId: '24535333',
+            text: "Cascavel (Atual-E-Emulado)"
+        };
 
+        $scope.data = {
+            estacaoId: 'http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png'
+                // estacaoId: "24535333"
+        };
+    }
+
+    // BUSCA AS ESTAÇÕES NO JSON
+    $scope.buscaJsonEstacoes = function () {
+        $http.get("js/cidadesEstacoes.json").success(function (data) {
+            $scope.listaEstacoes = data.data;
+        });
+    }
+
+    // Buscando o ID da cidade na lista de cidades do escopo/menu (Upgrade para buscar do json/xml)
+    $scope.buscaIdEstacao = function () {
+
+        $http.get("js/cidadesEstacoes.json").success(function (data) {
+            $scope.listaEstacoes = data.data;
+
+
+            angular.forEach($scope.listaEstacoes, function (item) {
+                if (item.cidadeId === $rootScope.cidadePrevi.cidadeId) {
+                    console.log(item);
+                    $rootScope.cidadeEstacao = {
+                        cidadeId: item.cidadeId,
+                        graficoId: item.graficoId,
+                        text: $rootScope.cidadePrevi.text
+                    }
+                    $scope.trocaGraficos($rootScope.cidadeEstacao.graficoId);
+                    $scope.baixaDivs();
+                }
+            });
+        });
+    }
+
+    // TROCA DO LINK DOS GRAFICOS
+    $scope.trocaGraficos = function () {
+        $scope.data.estacaoId = "http://www.simepar.br/site/imagens/graficos_condicoes/" + $rootScope.cidadeEstacao.graficoId + ".png";
+    }
+
+    // Função de captura de dados do HTML externo
     $scope.baixaDivs = function () {
         // $http.get("http://www.simepar.br/mobile/").then(
         $http.get("http://www.simepar.br/mobile/fragmentos/condicoes_atuais/PR/" + $rootScope.cidadeEstacao.cidadeId + ".html").then(
@@ -571,17 +559,24 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
                 //console.log(response.data);
             });
     }
-    $scope.baixaDivs();
-    
-        // Funcionalidade de imagens de fundo
 
+
+    // FUNCAO TROCAR ESTACAO PARA UI-SELECT CHAMAR
+    $rootScope.trocaEstacao = function (id, estId, nome) {
+        $rootScope.cidadeEstacao.cidadeId = id;
+        $rootScope.cidadeEstacao.graficoId = estId;
+        $rootScope.cidadeEstacao.text = nome;
+        $scope.trocaGraficos(estId);
+        $scope.baixaDivs();
+
+    }
+
+    // Funcionalidade de imagens de fundo
     // Lista de imagens
-    
     var listaImagensFundo = ["alagado.jpg", "flor.jpg", "grama.jpg", "praia.jpg"];
     $scope.numImagemFundoAgora = {};
-    
+
     // Random imagem e troca do link
-    
     $scope.trocaImagemFundoAgora = function () {
         var num = Math.floor(Math.random() * listaImagensFundo.length);
         if ($scope.numImagemFundoAgora == num) {
@@ -597,13 +592,14 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         }
     }
 
-    // Helper para o ng-style="retornaImgFundo()" do HTML
-
+    // Helper para o ng-style="retornaImgFundoAgora()" do HTML
     $scope.retornaImgFundoAgora = function () {
         var imagemFundoAgora = $scope.imagemFundoAgora;
         return imagemFundoAgora;
     }
 
+    // CHAMANDO INICIALIZADOR
+    $scope.init();
 
 })
 
