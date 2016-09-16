@@ -1,5 +1,8 @@
 angular.module('starter.controllers', ['ionic', 'ui.select'])
 
+.config(function( $ionicConfigProvider) {
+       $ionicConfigProvider.navBar.alignTitle('left');
+})
 
 .filter('propsFilter', function () {
     return function (items, props) {
@@ -68,14 +71,35 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 })
 
-.controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation, $sce, $rootScope) {
+.controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation, $sce, $rootScope, $ionicTabsDelegate) {
+
+    $scope.$on('$ionicView.enter', function () {
+        $timeout(function () {
+            $ionicNavBarDelegate.align('left');
+        });
+    });
+
+    //   $rootScope.goForward = function () {
+    //     var selected = $ionicTabsDelegate.selectedIndex();
+    //     if (selected != -1) {
+    //         $ionicTabsDelegate.select(selected + 1);
+    //     }
+    // }
+
+    // $rootScope.goBack = function () {
+    //     var selected = $ionicTabsDelegate.selectedIndex();
+    //     if (selected != -1 && selected != 0) {
+    //         $ionicTabsDelegate.select(selected - 1);
+    //     }
+    // }
+
 
     // Funções de inicialização do controller
     $scope.init = function () {
         $scope.baixaXml();
         $scope.plataforma = ionic.Platform.platform();
         $scope.buscaLocal();
-        $scope.trocaImagemFundo();
+        $rootScope.trocaImagemFundo();
     };
 
     // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
@@ -83,7 +107,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
         $scope.init();
 
-        $scope.trocaImagemFundo();
+        $rootScope.trocaImagemFundo();
 
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
@@ -169,10 +193,10 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     $scope.numImagemFundo = {}
 
     // Random imagem e troca do link
-    $scope.trocaImagemFundo = function () {
+    $rootScope.trocaImagemFundo = function () {
         var num = Math.floor(Math.random() * listaImagensFundo.length);
         if ($scope.numImagemFundo == num) {
-            $scope.trocaImagemFundo();
+            $rootScope.trocaImagemFundo();
         }
         else {
             $scope.numImagemFundo = num;
@@ -185,7 +209,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     }
 
     // Helper para o ng-style="retornaImgFundo()" do HTML
-    $scope.retornaImgFundo = function () {
+    $rootScope.retornaImgFundo = function () {
         var imagemFundo = $scope.imagemFundo;
         return imagemFundo;
     }
@@ -453,6 +477,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     // COMANDOS AO ATUALIZAR
     $scope.doRefresh = function () {
         $scope.buscaIdEstacao();
+        $rootScope.trocaImagemFundo();
         $scope.trocaImagemFundoAgora();
         $scope.baixaDivs();
         $scope.trocaGraficos();
@@ -603,7 +628,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 })
 
-.controller('RadarCtrl', function ($scope, $state) {
+.controller('RadarCtrl', function ($scope, $rootScope, $state) {
 
     $scope.radarCascavel = true;
 
@@ -614,22 +639,22 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 
     $scope.doRefresh = function () {
+        $rootScope.trocaImagemFundo();
         $state.go($state.current, {}, {
-            reload: true
+            reload: false
         });
-
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
 
     };
-    $scope.randomImg = Math.random();
+ 
 
 })
 
-.controller('SateliteCtrl', function ($scope, $state) {
-
+.controller('SateliteCtrl', function ($scope, $rootScope, $state) {
+    
     $scope.sateliteGoes = true;
-
+    
     $scope.mudaSatelite = function () {
         $scope.sateliteGoes = !$scope.sateliteGoes;
 
@@ -638,13 +663,14 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     $scope.doRefresh = function () {
 
+        $rootScope.trocaImagemFundo();
         $state.go($state.current, {}, {
-            reload: true
+            reload: false
         });
 
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
 
-    };
+    }
 
 });

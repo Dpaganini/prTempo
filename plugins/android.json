@@ -25,6 +25,10 @@
                         {
                             "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -33,6 +37,9 @@
     },
     "installed_plugins": {
         "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
+        },
+        "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
         }
     },

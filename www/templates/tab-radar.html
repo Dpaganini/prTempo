@@ -1,46 +1,50 @@
-<ion-view view-title="Paraná Tempo" cache-view="false" ng-controller="RadarCtrl">
+<ion-view view-title="Paraná Tempo" cache-view="false" ng-controller="RadarCtrl" class="imagens-background" ng-style="retornaImgFundo()">
 
-<ion-nav-buttons side="right">
-  <h5>Radar: &nbsp</h5>
-  <h6>Cascavel</h6>
-  <label class="toggle" ng-click="mudaRadar()">
+  <ion-nav-buttons side="right">
+    <h6 class="stable">Cascavel</h6>
+    <label class="toggle" ng-click="mudaRadar()">
     <input type="checkbox">
     <div class="track">
       <div class="handle"></div>
     </div>
   </label>
-  <h6>Teixeira Soares</h6>
-</ion-nav-buttons>
+    <h6 class="stable">Teixeira Soares</h6>
+  </ion-nav-buttons>
+
+  <ion-content on-swipe-right="goBack()" on-swipe-left="goForward()">
 
 
-  <ion-content>
-    
-      
-    
+
     <ion-refresher on-refresh="doRefresh()" spinner="lines">
-    </ion-refresher> 
-    
-    <div id="cf4a" ng-if="radarCascavel" class="enquadrar">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_1.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_2.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_3.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_4.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_5.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_6.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_7.gif">
-            <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_8.gif">
-            </div>
-            
-            
-    <div id="cf4a" ng-if="!radarCascavel" class="enquadrar">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_1.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_2.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_3.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_4.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_5.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_6.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_7.gif">
-            <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_8.gif">
-            </div>
+    </ion-refresher>
+    <div class="list card">
+      <div align="center" class="item">
+        <!--<div id="cf4a" ng-if="radarCascavel" class="enquadrar">-->
+        <div ng-if="radarCascavel" class="enquadrar">
+          <img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_1.gif">
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_2.gif">-->
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_3.gif">-->
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_4.gif">-->
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_5.gif">-->
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_6.gif">-->
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_7.gif">-->
+          <!--<img src="http://simepar.br/radar/public/cas/CAS_PPI_N4_8.gif">-->
+        </div>
+
+
+        <!--<div id="cf4a" ng-if="!radarCascavel" class="enquadrar">-->
+        <div ng-if="!radarCascavel" class="enquadrar">
+          <img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_1.gif">
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_2.gif">-->
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_3.gif">-->
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_4.gif">-->
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_5.gif">-->
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_6.gif">-->
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_7.gif">-->
+          <!--<img src="http://www.simepar.br/radar/public/txs/TXS_PPI_N4_8.gif">-->
+        </div>
+
+      </div>
+    </div>
   </ion-content>
 </ion-view>

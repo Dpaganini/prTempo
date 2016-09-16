@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'ionic.service.core', 'starter.controllers', 'ngCordova'])
 
-.run(function ($rootScope,$ionicPlatform) {
+.run(function ($rootScope,$ionicPlatform, $ionicHistory) {
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -26,8 +26,8 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'starter.controllers',
     if ($rootScope.backButtonPressedOnceToExit) {
       ionic.Platform.exitApp();
     }
-    else if ($rootScope.$viewHistory.backView) {
-      $rootScope.$viewHistory.backView.go();
+    else if ($ionicHistory.backView) {
+     $ionicHistory.goBack();
     }
     else {
       $rootScope.backButtonPressedOnceToExit = true;

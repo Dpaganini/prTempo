@@ -1,8 +1,8 @@
-<ion-view view-title="Paraná Tempo" ng-controller="AgoraCtrl" class="imagens-background" ng-style="retornaImgFundoAgora()">
+<ion-view view-title="Paraná Tempo" ng-controller="AgoraCtrl" class="imagens-background" ng-style="retornaImgFundo()">
 
   <!--NAV BAR com select de cidades-->
   <ion-nav-buttons side="right">
-    <ui-select ng-model="cidadeEstacao" theme="select2" style="min-width: 150px;" title="Cidade" on-select="trocaEstacao($select.selected.cidadeId,$select.selected.graficoId,$select.selected.text)">
+    <ui-select ng-model="cidadeEstacao" theme="select2" title="Cidade" on-select="trocaEstacao($select.selected.cidadeId,$select.selected.graficoId,$select.selected.text)">
       <ui-select-match placeholder="Selecione ou busque uma cidade na lista...">{{$select.selected.text}}</ui-select-match>
       <ui-select-choices repeat="item in listaEstacoes | filter: {text: $select.search}">
         <span ng-bind-html="item.text | highlight: $select.search"></span>
@@ -12,7 +12,7 @@
 
 
 
-  <ion-content class="padding item-transparente">
+  <ion-content class="padding item-transparente" on-swipe-right="goBack()" on-swipe-left="goForward()">
     <ion-refresher on-refresh="doRefresh()" spinner="lines">
     </ion-refresher>
 
