@@ -1,7 +1,7 @@
 angular.module('starter.controllers', ['ionic', 'ui.select'])
 
-.config(function( $ionicConfigProvider) {
-       $ionicConfigProvider.navBar.alignTitle('left');
+.config(function ($ionicConfigProvider) {
+    $ionicConfigProvider.navBar.alignTitle('left');
 })
 
 .filter('propsFilter', function () {
@@ -71,12 +71,50 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 })
 
-.controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation, $sce, $rootScope, $ionicTabsDelegate) {
+.controller('PrevisaoCtrl', function ($scope, $http, $cordovaGeolocation, $sce, $rootScope, $ionicNavBarDelegate, $ionicDeploy) {
+
+    // $scope.updateMinutes = 2;
+
+    // // Handle action when update is available
+    // $rootScope.$on('$ionicDeploy:updateAvailable', function () {
+    //     console.log('Ionic Deploy: New update available!');
+    //     $scope.hasUpdate = true;
+    // });
+
+    // // Stop checking for updates form Ionic Deploy
+    // $scope.stopCheckingForUpdates = function () {
+    //     $ionicDeploy.unwatch();
+    // };
+
+    // Update app code with new release from Ionic Deploy
+    $scope.doUpdate = function () {
+        $ionicDeploy.update().then(function (res) {
+            console.log('Ionic Deploy: Update Success! ', res);
+        }, function (err) {
+            console.log('Ionic Deploy: Update error! ', err);
+        }, function (prog) {
+            console.log('Ionic Deploy: Progress... ', prog);
+        });
+    };
+
+    // Check Ionic Deploy for new code
+    $scope.checkForUpdates = function () {
+        console.log('Ionic Deploy: Checking for updates');
+        $ionicDeploy.check().then(function (hasUpdate) {
+            
+            alert('Ionic Deploy: Update available: ' + hasUpdate);
+            $rootScope.lastChecked = new Date();
+            $scope.hasUpdate = hasUpdate;
+        }, function (err) {
+            alert('Ionic Deploy: Unable to check for updates'+err, err);
+        });
+    }
+
+
 
     $scope.$on('$ionicView.enter', function () {
-        $timeout(function () {
-            $ionicNavBarDelegate.align('left');
-        });
+        $ionicNavBarDelegate.align('left');
+
     });
 
     //   $rootScope.goForward = function () {
@@ -93,7 +131,6 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     //     }
     // }
 
-
     // Funções de inicialização do controller
     $scope.init = function () {
         $scope.baixaXml();
@@ -104,22 +141,18 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
     $scope.doRefresh = function () {
-
-        $scope.init();
-
+        // $scope.checkForUpdates();
+        $scope.baixaXml();
         $rootScope.trocaImagemFundo();
-
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
-
-
     };
 
 
     // Definindo Cidade Padrão (Upgrade)
     $rootScope.cidadePrevi = {
         cidadeId: '4104808',
-        text: "Cascavel (Atual-Emulado)"
+        text: "Cascavel"
     };
 
     // Buscando lista de cidades do Paraná
@@ -127,6 +160,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     $http.get("js/cidades.json").success(function (data) {
         $rootScope.listaCidades = data.data;
         // $scope.buscaIdCidade()
+
     });
 
     // Buscando lista de Principais cidades do Paraná
@@ -175,8 +209,11 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
                     text: item.text + " (Atual)"
                 }
                 $scope.baixaXml();
+
             }
         });
+        $rootScope.listaCidades.unshift($rootScope.cidadePrevi);
+        // $rootScope.listaCidades.splice(0, 0, $rootScope.cidadePrevi);
 
     }
 
@@ -549,7 +586,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
                 var el = document.createElement('html');
                 el.innerHTML = data;
-
+                console.log(el);
                 var tempAtualBruto = el.getElementsByClassName('tempChuva')[0].childNodes[2].data;
                 var chuvaBruto = el.getElementsByClassName('tempChuva')[0].childNodes[6].data;
                 var urBruto = el.getElementsByClassName('ur')[0].childNodes[0].data;
@@ -647,14 +684,14 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         $scope.$broadcast('scroll.refreshComplete');
 
     };
- 
+
 
 })
 
 .controller('SateliteCtrl', function ($scope, $rootScope, $state) {
-    
+
     $scope.sateliteGoes = true;
-    
+
     $scope.mudaSatelite = function () {
         $scope.sateliteGoes = !$scope.sateliteGoes;
 

@@ -1,0 +1,112 @@
+{
+    "data": [
+        {
+            "cidadeId": "4101408",
+            "graficoId": "23515154",
+            "text": "Apucarana"
+        },
+
+        {
+            "cidadeId": "4104303",
+            "graficoId": "24035222",
+            "text": "Campo Mourão"
+        },
+       
+        {
+            "cidadeId": "4104808",
+            "graficoId": "24535333",
+            "text": "Cascavel"
+        },
+
+        {
+            "cidadeId": "4106902",
+            "graficoId": "25264916",
+            "text": "Curitiba"
+        },
+        
+        {
+            "cidadeId": "4108304",
+            "graficoId": "25245437",
+            "text": "Foz do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4108403",
+            "graficoId": "26055305",
+            "text": "Francisco Beltrão"
+        },
+
+        {
+            "cidadeId": "4109401",
+            "graficoId": "25215130",
+            "text": "Guarapuava"
+        },
+
+        {
+            "cidadeId": "4109609",
+            "graficoId": "25324831",
+            "text": "Guaratuba"
+        },
+
+        {
+            "cidadeId": "4113205",
+            "graficoId": "25474946",
+            "text": "Lapa"
+        },
+
+        {
+            "cidadeId": "4113700",
+            "graficoId": "23185109",
+            "text": "Londrina"
+        },
+        
+        {
+            "cidadeId": "4115200",
+            "graficoId": "23275159",
+            "text": "Maringá"
+        },
+
+        {
+            "cidadeId": "4117602",
+            "graficoId": "26285158",
+            "text": "Palmas"
+        },
+
+        {
+            "cidadeId": "4118204",
+            "graficoId": "25534852",
+            "text": "Paranaguá"
+        },
+
+        {
+            "cidadeId": "4118501",
+            "graficoId": "26075241",
+            "text": "Pato Branco"
+        },
+
+        {
+            "cidadeId": "4119905",
+            "graficoId": "25135001",
+            "text": "Ponta Grossa"
+        },
+
+        {
+            "cidadeId": "4127700",
+            "graficoId": "24475343",
+            "text": "Toledo"
+        },
+
+        {
+            "cidadeId": "4128104",
+            "graficoId": "23445317",
+            "text": "Umuarama"
+        },
+
+        {
+            "cidadeId": "4128203",
+            "graficoId": "26145103",
+            "text": "União da Vitória"
+        }
+
+]
+}

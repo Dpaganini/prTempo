@@ -1,5 +1,10 @@
 /* Empty. Add your own CSS if you like */
 
+/*h2 span { */
+/*display: inline-block;*/
+/*vertical-align: middle;*/
+/*}*/
+
 .imagens-background {
     /*background-image: url('../img/praia.jpg');*/
     -webkit-background-size: cover;
@@ -171,7 +176,7 @@
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
     -o-transition: opacity 1s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 #radarImagens img.top:hover {
@@ -179,54 +184,60 @@
 }
 
 @-webkit-keyframes cf4FadeInOut {
-    0% {
+     0% {
         opacity: 1;
     }
-    8.9% {
+    10.7% {
         opacity: 1;
     }
     12.5% {
         opacity: 0;
     }
-    96.4% {
+    
+    98.2% {
         opacity: 0;
     }
+    
     100% {
         opacity: 1;
     }
 }
 
 @-moz-keyframes cf4FadeInOut {
-    0% {
+     0% {
         opacity: 1;
     }
-    8.9% {
+    10.7% {
         opacity: 1;
     }
     12.5% {
         opacity: 0;
     }
-    96.4% {
+    
+    98.2% {
         opacity: 0;
     }
+    
     100% {
         opacity: 1;
     }
 }
 
 @-o-keyframes cf4FadeInOut {
-    0% {
+     0% {
         opacity: 1;
     }
-    8.9% {
+    10.7% {
         opacity: 1;
     }
     12.5% {
         opacity: 0;
     }
-    96.4% {
+    
+    98.2% {
         opacity: 0;
     }
+    
     100% {
         opacity: 1;
     }

@@ -1,10 +1,10 @@
-<ion-view view-title="Paraná Tempo" ng-controller="PrevisaoCtrl" class="imagens-background" ng-style="retornaImgFundo()">
+<ion-view style="min-width: 180px;" view-title="Paraná Tempo" ng-controller="PrevisaoCtrl" class="imagens-background" ng-style="retornaImgFundo()">
 
   <!--NAV BAR com select de cidades-->
   <ion-nav-buttons side="right">
-    <ui-select ng-model="cidadePrevi" theme="select2" title="Cidade" on-select="trocaCidade($select.selected.cidadeId,$select.selected.text)">
+    <ui-select ng-model="cidadePrevi" theme="select2" style="min-width: 100px;" title="Cidade" on-select="trocaCidade($select.selected.cidadeId,$select.selected.text)">
       <ui-select-match placeholder="Selecione ou busque uma cidade na lista...">{{$select.selected.text}}</ui-select-match>
-      <ui-select-choices repeat="item in listaCidades | filter: {text: $select.search}">
+      <ui-select-choices repeat="item in listaCidadesPrincipais | filter: {text: $select.search}">
         <span ng-bind-html="item.text | highlight: $select.search"></span>
       </ui-select-choices>
     </ui-select>
@@ -42,36 +42,40 @@
           <h4>{{prev1_Data +" - "+prev1_Semana+"."}}</h4>
         </div>
         <div class="col" ng-if="maxima">
-          <h4><i class="icon ion-arrow-down-c calm"></i> {{prev1_TempMin+"°C"}}
-            &emsp;
-           <i class="icon ion-arrow-up-c assertive"></i> {{prev1_TempMax+"°C"}}</h4>
+          <h4><i class="icon ion-arrow-down-c calm"></i> {{prev1_TempMin+"°C"}} &emsp;
+            <i class="icon ion-arrow-up-c assertive"></i> {{prev1_TempMax+"°C"}}</h4>
         </div>
       </div>
 
       <div ng-if="madrugada" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev1_MadrugadaIcone}}" />
         <div class="row">
-          <h2>Madrugada:</h2>
+          <h2 style="min-width: 55px" >Madrugada:</h2>
           &nbsp;
           <span>{{prev1_Madrugada}}</span>
         </div>
       </div>
       <div ng-if="manha" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev1_ManhaIcone}}" />
         <div class="row">
-          <h2>Manhã:</h2>
-          &nbsp;
-          <span>{{prev1_Manha}}</span>
+          <!--<div class="col">-->
+            <h2 style="min-width: 50px" >Manhã:</h2>
+            &nbsp;
+          <!--</div>-->
+          <!--<div class="col">-->
+            <span>{{prev1_Manha}}</span>
+          <!--</div>-->
+
         </div>
       </div>
       <div ng-if="tarde" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev1_TardeIcone}}">
         <div class="row">
-          <h2>Tarde:</h2>
+          <h2 style="min-width: 50px" >Tarde:</h2>
           &nbsp;
           <span>{{prev1_Tarde}}</span>
         </div>
       </div>
       <div ng-show="noite" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev1_NoiteIcone}}">
         <div class="row">
-          <h2>Noite:</h2>
+          <h2 style="min-width: 50px" >Noite:</h2>
           &nbsp;
           <span>{{prev1_Noite}}</span>
         </div>
@@ -86,9 +90,8 @@
           <h4>{{prev2_Data +" - "+prev2_Semana+"."}}</h4>
         </div>
         <div class="col">
-          <h4><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}
-            &emsp;
-           <i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h4>
+          <h4><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}} &emsp;
+            <i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h4>
         </div>
         <!--<div>-->
         <!--  <h4>{{prev2_Data +" - "+prev2_Semana+"."}}</h4>-->
@@ -103,28 +106,28 @@
 
       <div ng-if="madrugada2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_MadrugadaIcone}}" />
         <div class="row">
-          <h2>Madrugada:</h2>
+          <h2 style="min-width: 55px" >Madrugada:</h2>
           &nbsp;
           <span>{{prev2_Madrugada}}</span>
         </div>
       </div>
       <div ng-if="manha2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_ManhaIcone}}" />
         <div class="row">
-          <h2>Manhã:</h2>
+          <h2 style="min-width: 50px" >Manhã:</h2>
           &nbsp;
           <span>{{prev2_Manha}}</span>
         </div>
       </div>
       <div ng-if="tarde2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_TardeIcone}}">
         <div class="row">
-          <h2>Tarde:</h2>
+          <h2 style="min-width: 50px" >Tarde:</h2>
           &nbsp;
           <span>{{prev2_Tarde}}</span>
         </div>
       </div>
       <div ng-if="noite2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_NoiteIcone}}">
         <div class="row">
-          <h2>Noite:</h2>
+          <h2 style="min-width: 50px" >Noite:</h2>
           &nbsp;
           <span>{{prev2_Noite}}</span>
         </div>

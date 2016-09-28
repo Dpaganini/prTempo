@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+<!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src * 'unsafe-inline'; script-src * 'unsafe-inline'">-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -8,33 +10,36 @@
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
- <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- bluebird -->
+    <script src="lib/bluebird.min.js"></script>
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
-    
-    
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-<script src="cordova.js"></script>
+    <script src="lib/ionic.cloud.min.js"></script>
+
+
     <!-- cordova script (this will be a 404 during development) -->
     <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
-<!-- <script src="cordova.js"></script> -->
-
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <!--<script src="js/services.js"></script>-->
     <script src="js/xml2json.min.js"></script>
-      
+
     <!-- select autocomplete -->
 
-      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
-        <script src="js/select.js"></script>
-          <link rel="stylesheet" href="css/select.css">
-       
-      
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <script src="js/select.js"></script>
+    <link rel="stylesheet" href="css/select.css">
+
+
   </head>
+
   <body ng-app="starter" ng-controller="index">
     <!--
       The nav bar that will be updated as we navigate between views.
@@ -50,4 +55,5 @@
     -->
     <ion-nav-view></ion-nav-view>
   </body>
+
 </html>

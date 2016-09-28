@@ -1,0 +1,60 @@
+{
+    "data": [
+       
+        {
+            "cidadeId": "4104808",
+            "text": "Cascavel"
+        },
+
+        {
+            "cidadeId": "4106902",
+            "text": "Curitiba"
+        },
+
+        {
+            "cidadeId": "4108304",
+            "text": "Foz do Iguaçu"
+        },
+
+        {
+            "cidadeId": "4108403",
+            "text": "Francisco Beltrão"
+        },
+
+        {
+            "cidadeId": "4108809",
+            "text": "Guaíra"
+        },
+
+        {
+            "cidadeId": "4109401",
+            "text": "Guarapuava"
+        },
+
+        {
+            "cidadeId": "4113700",
+            "text": "Londrina"
+        },
+
+        {
+            "cidadeId": "4115200",
+            "text": "Maringá"
+        },
+
+        {
+            "cidadeId": "4118204",
+            "text": "Paranaguá"
+        },
+
+       {
+            "cidadeId": "4119905",
+            "text": "Ponta Grossa"
+        },
+
+        {
+            "cidadeId": "4127700",
+            "text": "Toledo"
+        }
+
+]
+}

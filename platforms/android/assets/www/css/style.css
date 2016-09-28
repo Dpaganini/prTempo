@@ -1,164 +1,159 @@
 /* Empty. Add your own CSS if you like */
 
-.content-box{
-    height: 100%;}
+/*h2 span { */
+/*display: inline-block;*/
+/*vertical-align: middle;*/
+/*}*/
 
-.enquadrar{
+.imagens-background {
+    /*background-image: url('../img/praia.jpg');*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.item-transparente {
+    /*opacity: .75;*/
+    /*    background: rgb(0, 0, 0) transparent;*/
+    /*background: rgba(0, 0, 0, 0.7);*/
+    /*background: rgba(76, 175, 80, 0.1) */
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    /*background-color: transparent;*/
+    opacity: .8;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.vertical-align {
+    vertical-align: middle;
+}
+
+.p h1 h2 h3 h4 h5 h6 {
+    opacity: 1;
+}
+
+.content-box {
+    height: 100%;
+}
+
+.enquadrar {
     height: 100%;
     width: 100%;
     position: relative;
-    
 }
 
-.enquadrar img{
-
-width: 100%;
+.enquadrar img {
+    width: 100%;
 }
 
+#grafico {
+    /*width: 800px;*/
+    /*height: 600px;*/
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    margin: auto;
+}
 
-/*.ui-select-highlight {*/
-/*  font-weight: bold;*/
-/*}*/
+#grafico img {
+    max-width: 100%;
+    /*    position: absolute;*/
+    /*    top: -4px;*/
+    /*    left: 0px;*/
+}
 
-/*.ui-select-offscreen {*/
-/*  clip: rect(0 0 0 0) !important;*/
-/*  width: 1px !important;*/
-/*  height: 1px !important;*/
-/*  border: 0 !important;*/
-/*  margin: 0 !important;*/
-/*  padding: 0 !important;*/
-/*  overflow: hidden !important;*/
-/*  position: absolute !important;*/
-/*  outline: 0 !important;*/
-/*  left: 0px !important;*/
-/*  top: 0px !important;*/
-/*}*/
-
-/*.input-dropdown {*/
-/*    position: relative;*/
-/*    display: inline-block;*/
-/*}*/
-/*.input-dropdown .dropdown {*/
-/*    display: none;*/
-/*    position: absolute;*/
-/*    top: 100%;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    margin-top: 2px;*/
-/*    background: #EEE;*/
-/*}*/
-/*.input-dropdown .dropdown div {*/
-/*    cursor: pointer;*/
-/*    padding: 2px 5px;*/
-/*}*/
-/*.input-dropdown input:focus + .dropdown {*/
-/*    display: block;*/
-/*}*/
-
-/* Select2 theme */
-
-/* Mark invalid Select2 */
-/*.ng-dirty.ng-invalid > a.select2-choice {*/
-/*    border-color: #D44950;*/
-/*}*/
-
-/*.select2-result-single {*/
-/*  padding-left: 0;*/
-/*}*/
-
-/*.select2-locked > .select2-search-choice-close{*/
-/*  display:none;*/
-/*}*/
-
-/*.select-locked > .ui-select-match-close{*/
-/*    display:none;*/
-/*}*/
-
-/*body > .select2-container.open {*/
-  /* The z-index Select2 applies to the select2-drop 
-  z-index: 9999; 
-/*}*/
-
-
-#grafico1{
-    width:370px;
-    height:360px;
-    overflow:hidden;
+#grafico1 {
+    max-width: 100%;
+    width: 370px;
+    height: 360px;
+    overflow: hidden;
     position: relative;
     border: 1px solid black;
     margin: auto;
 }
 
 #grafico1 img {
+    
     position: absolute;
     top: -4px;
     left: 0px;
 }
 
-#grafico2{
-    width:370px;
-    height:364px;
-    overflow:hidden;
+#grafico2 {
+    max-width: 100%;
+    width: 370px;
+    height: 364px;
+    overflow: hidden;
     position: relative;
     border: 1px solid black;
     margin: auto;
 }
 
 #grafico2 img {
+    
     position: absolute;
     top: 0px;
     left: -380px;
 }
 
-#grafico3{
-    width:370px;
-    height:356px;
-    overflow:hidden;
+#grafico3 {
+    max-width: 100%;
+    width: 370px;
+    height: 356px;
+    overflow: hidden;
     position: relative;
     border: 1px solid black;
     margin: auto;
 }
 
 #grafico3 img {
+    
     position: absolute;
     top: -360px;
     left: 0px;
 }
 
-#grafico4{
-    width:370px;
-    height:360px;
-    overflow:hidden;
+#grafico4 {
+    max-width: 100%;
+    width: 370px;
+    height: 360px;
+    overflow: hidden;
     position: relative;
     border: 1px solid black;
     margin: auto;
 }
 
 #grafico4 img {
+    
     position: absolute;
     top: -360px;
     left: -375px;
 }
 
-#grafico5{
-    width:370px;
-    height:356px;
-    overflow:hidden;
+#grafico5 {
+    max-width: 100%;
+    width: 370px;
+    height: 356px;
+    overflow: hidden;
     position: relative;
     border: 1px solid black;
     margin: auto;
 }
 
 #grafico5 img {
+    
     position: absolute;
     top: -712px;
     left: 0px;
 }
 
-#grafico6{
-    width:370px;
-    height:356px;
-    overflow:hidden;
+#grafico6 {
+    max-width: 100%;
+    width: 370px;
+    height: 356px;
+    overflow: hidden;
     position: relative;
     border: 1px solid black;
     margin: auto;
@@ -171,174 +166,189 @@ width: 100%;
 }
 
 #radarImagens {
-  position:relative;
-  margin:0 auto;
+    position: relative;
+    margin: 0 auto;
 }
 
 #radarImagens img {
-  position:absolute;
-  left:0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 #radarImagens img.top:hover {
-  opacity:0;
+    opacity: 0;
 }
+
 @-webkit-keyframes cf4FadeInOut {
- 0% {
-   opacity:1;
- }
- 8.9% {
-   opacity:1;
- }
- 12.5% {
-   opacity:0;
- }
- 96.4% {
-   opacity:0;
- }
- 100% {
-   opacity:1;
- }
+     0% {
+        opacity: 1;
+    }
+    10.7% {
+        opacity: 1;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    
+    98.2% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes cf4FadeInOut {
- 0% {
-   opacity:1;
- }
- 8.9% {
-   opacity:1;
- }
- 12.5% {
-   opacity:0;
- }
- 96.4% {
-   opacity:0;
- }
- 100% {
-   opacity:1;
- }
+     0% {
+        opacity: 1;
+    }
+    10.7% {
+        opacity: 1;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    
+    98.2% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
 }
 
 @-o-keyframes cf4FadeInOut {
- 0% {
-   opacity:1;
- }
- 8.9% {
-   opacity:1;
- }
- 12.5% {
-   opacity:0;
- }
- 96.4% {
-   opacity:0;
- }
- 100% {
-   opacity:1;
- }
+     0% {
+        opacity: 1;
+    }
+    10.7% {
+        opacity: 1;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    
+    98.2% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes cf4FadeInOut {
- 0% {
-   opacity:1;
- }
- 8.9% {
-   opacity:1;
- }
- 12.5% {
-   opacity:0;
- }
- 96.4% {
-   opacity:0;
- }
- 100% {
-   opacity:1;
- }
+     0% {
+        opacity: 1;
+    }
+    10.7% {
+        opacity: 1;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    
+    98.2% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+    
 }
 
 #cf4a {
-  position:relative;
-  height:auto;
-  width:auto;
-  margin:0 auto;
+    position: relative;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
 }
+
 #cf4a img {
     position: absolute;
-    margin: 0 auto;  
+    margin: 0 auto;
     left: 0;
-    right: 0;  
-  
+    right: 0;
 }
 
 #cf4a img {
-  -webkit-animation-name: cf4FadeInOut;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 11.2s;
-
-  -moz-animation-name: cf4FadeInOut;
-  -moz-animation-timing-function: ease-in-out;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-duration: 11.2s;
-
-  -o-animation-name: cf4FadeInOut;
-  -o-animation-timing-function: ease-in-out;
-  -o-animation-iteration-count: infinite;
-  -o-animation-duration: 11.2s;
-
-  animation-name: cf4FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 11.2s;
+    -webkit-animation-name: cf4FadeInOut;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 11.2s;
+    -moz-animation-name: cf4FadeInOut;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 11.2s;
+    -o-animation-name: cf4FadeInOut;
+    -o-animation-timing-function: ease-in-out;
+    -o-animation-iteration-count: infinite;
+    -o-animation-duration: 11.0s;
+    animation-name: cf4FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 11.0s;
 }
+
 #cf4a img:nth-of-type(1) {
-  -webkit-animation-delay: 9.8s;
-  -moz-animation-delay: 9.8s;
-  -o-animation-delay: 9.8s;
-  animation-delay: 9.8s;
+    -webkit-animation-delay: 9.8s;
+    -moz-animation-delay: 9.8s;
+    -o-animation-delay: 9.8s;
+    animation-delay: 9.8s;
 }
+
 #cf4a img:nth-of-type(2) {
-  -webkit-animation-delay: 8.4s;
-  -moz-animation-delay: 8.4s;
-  -o-animation-delay: 8.4s;
-  animation-delay: 8.4s;
+    -webkit-animation-delay: 8.4s;
+    -moz-animation-delay: 8.4s;
+    -o-animation-delay: 8.4s;
+    animation-delay: 8.4s;
 }
+
 #cf4a img:nth-of-type(3) {
-  -webkit-animation-delay: 7s;
-  -moz-animation-delay: 7s;
-  -o-animation-delay: 7s;
-  animation-delay: 7s;
+    -webkit-animation-delay: 7s;
+    -moz-animation-delay: 7s;
+    -o-animation-delay: 7s;
+    animation-delay: 7s;
 }
+
 #cf4a img:nth-of-type(4) {
-  -webkit-animation-delay: 5.6s;
-  -moz-animation-delay: 5.6s;
-  -o-animation-delay: 5.6s;
-  animation-delay: 5.6s;
+    -webkit-animation-delay: 5.6s;
+    -moz-animation-delay: 5.6s;
+    -o-animation-delay: 5.6s;
+    animation-delay: 5.6s;
 }
+
 #cf4a img:nth-of-type(5) {
-  -webkit-animation-delay: 4.2s;
-  -moz-animation-delay: 4.2s;
-  -o-animation-delay: 4.2s;
-  animation-delay: 4.2s;
+    -webkit-animation-delay: 4.2s;
+    -moz-animation-delay: 4.2s;
+    -o-animation-delay: 4.2s;
+    animation-delay: 4.2s;
 }
+
 #cf4a img:nth-of-type(6) {
-  -webkit-animation-delay: 2.8s;
-  -moz-animation-delay: 2.8s;
-  -o-animation-delay: 2.8s;
-  animation-delay: 2.8s;
+    -webkit-animation-delay: 2.8s;
+    -moz-animation-delay: 2.8s;
+    -o-animation-delay: 2.8s;
+    animation-delay: 2.8s;
 }
+
 #cf4a img:nth-of-type(7) {
-  -webkit-animation-delay: 1.4s;
-  -moz-animation-delay: 1.4s;
-  -o-animation-delay: 1.4s;
-  animation-delay: 1.4s;
+    -webkit-animation-delay: 1.4s;
+    -moz-animation-delay: 1.4s;
+    -o-animation-delay: 1.4s;
+    animation-delay: 1.4s;
 }
+
 #cf4a img:nth-of-type(8) {
-  -webkit-animation-delay: 0;
-  -moz-animation-delay: 0;
-  -o-animation-delay: 0;
-  animation-delay: 0;
+    -webkit-animation-delay: 0;
+    -moz-animation-delay: 0;
+    -o-animation-delay: 0;
+    animation-delay: 0;
 }
