@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.cloud'])
 
-.run(function ($rootScope, $ionicPlatform, $ionicHistory, $ionicPopup, $ionicDeploy, $interval) {
+.run(function ($rootScope, $ionicPlatform, $ionicHistory, $ionicPopup, $ionicDeploy, $interval, $timeout, $cordovaToast) {
   $ionicPlatform.ready(function () {
 
 
@@ -53,24 +53,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
       //polling for an update every 30 second
       var snapshotInterval = $interval(function () {
         $ionicDeploy.check().then(function (snapshotAvailable) {
-            alert("check");
+            // alert("check");
           console.log('checking for update ', snapshotAvailable);
           if (snapshotAvailable) {
             $interval.cancel(snapshotInterval);
-            console.log('downloading update');
+            // console.log('downloading update');
             $ionicDeploy.download().then(function () {
-              console.log('extracting udate');
+              // console.log('extracting udate');
               $ionicDeploy.extract().then(function () {
-                console.log('loading update');
+                // console.log('loading update');
                 // $ionicDeploy.load();
 
                 $ionicPopup.show({
-                  title: 'Update available',
-                  subTitle: 'A new update is available, would you like to update to the latest version?  ',
+                  title: 'Atualização Disponível',
+                  subTitle: 'Uma nova atualização está disponível, deseja atualizar para a última versão?',
                   buttons: [
-                    {text: 'Not now'},
+                    {text: 'Agora não'},
                     {
-                      text: 'Restart',
+                      text: 'Reiniciar',
                       onTap: function (e) {
                         $ionicDeploy.load();
                       }
@@ -97,32 +97,49 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-  });
+  // });
 
-  $ionicPlatform.registerBackButtonAction(function (e) {
-    if ($rootScope.backButtonPressedOnceToExit) {
-      ionic.Platform.exitApp();
-    }
-    else if ($ionicHistory.backView) {
-      $ionicHistory.goBack();
-    }
-    else {
-      $rootScope.backButtonPressedOnceToExit = true;
-      window.plugins.toast.showShortCenter(
-        "Pressione voltar novamente para sair",
-        function (a) {},
-        function (b) {}
-      );
-      setTimeout(function () {
-        $rootScope.backButtonPressedOnceToExit = false;
-      }, 2000);
+  // $ionicPlatform.registerBackButtonAction(function (e) {
+  //   if ($rootScope.backButtonPressedOnceToExit) {
+  //     ionic.Platform.exitApp();
+  //   }
+  //   // else if ($ionicHistory.backView) {
+  //   //   $ionicHistory.goBack();
+  //   // }
+  //   else {
+  //     $rootScope.backButtonPressedOnceToExit = true;
+  //     window.plugins.toast.showShortCenter(
+  //       "Pressione voltar novamente para sair",
+  //       function (a) {},
+  //       function (b) {}
+  //     );
+  //     setTimeout(function () {
+  //       $rootScope.backButtonPressedOnceToExit = false;
+  //     }, 2000);
+  //   }
+  //   e.preventDefault();
+  //   return false;
+  // }, 101);
+
+
+   $ionicPlatform.registerBackButtonAction(function(e) {
+     if ($rootScope.backButtonPressedOnceToExit) {
+        navigator.app.exitApp(); // or // ionic.Platform.exitApp(); both work
+    // } else if ($ionicHistory.backView()) {
+    //     $ionicHistory.goBack();
+     } else {
+        $rootScope.backButtonPressedOnceToExit = true;
+          $cordovaToast.show('Pressione novamente para sair.', 'long', 'center');                
+        $timeout(function() {
+            $rootScope.backButtonPressedOnceToExit = false;
+        }, 2000); // reset if user doesn't press back within 2 seconds, to fire exit
     }
     e.preventDefault();
     return false;
   }, 101);
 
 
-
+ });
 
   // alert("run");
   // var deploy = new Ionic.Deploy();

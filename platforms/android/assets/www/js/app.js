@@ -53,24 +53,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
       //polling for an update every 30 second
       var snapshotInterval = $interval(function () {
         $ionicDeploy.check().then(function (snapshotAvailable) {
-            alert("check");
+            // alert("check");
           console.log('checking for update ', snapshotAvailable);
           if (snapshotAvailable) {
             $interval.cancel(snapshotInterval);
-            console.log('downloading update');
+            // console.log('downloading update');
             $ionicDeploy.download().then(function () {
-              console.log('extracting udate');
+              // console.log('extracting udate');
               $ionicDeploy.extract().then(function () {
-                console.log('loading update');
+                // console.log('loading update');
                 // $ionicDeploy.load();
 
                 $ionicPopup.show({
-                  title: 'Update available',
-                  subTitle: 'A new update is available, would you like to update to the latest version?  ',
+                  title: 'Atualização Disponível',
+                  subTitle: 'Uma ´nova atualização está disponível, deseja atualizar para a última versão?',
                   buttons: [
-                    {text: 'Not now'},
+                    {text: 'Agora não'},
                     {
-                      text: 'Restart',
+                      text: 'Reiniciar',
                       onTap: function (e) {
                         $ionicDeploy.load();
                       }

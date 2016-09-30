@@ -110,12 +110,10 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         });
     }
 
+    // $scope.$on('$ionicView.enter', function () {
+    //     $ionicNavBarDelegate.align('left');
 
-
-    $scope.$on('$ionicView.enter', function () {
-        $ionicNavBarDelegate.align('left');
-
-    });
+    // });
 
     //   $rootScope.goForward = function () {
     //     var selected = $ionicTabsDelegate.selectedIndex();
@@ -141,7 +139,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
     $scope.doRefresh = function () {
-        $scope.checkForUpdates();
+        // $scope.checkForUpdates();
         $scope.baixaXml();
         $rootScope.trocaImagemFundo();
         //Stop the ion-refresher from spinning

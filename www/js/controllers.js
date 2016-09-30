@@ -110,12 +110,10 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         });
     }
 
+    // $scope.$on('$ionicView.enter', function () {
+    //     $ionicNavBarDelegate.align('left');
 
-
-    $scope.$on('$ionicView.enter', function () {
-        $ionicNavBarDelegate.align('left');
-
-    });
+    // });
 
     //   $rootScope.goForward = function () {
     //     var selected = $ionicTabsDelegate.selectedIndex();
