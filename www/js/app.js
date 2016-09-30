@@ -129,7 +129,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
     //     $ionicHistory.goBack();
      } else {
         $rootScope.backButtonPressedOnceToExit = true;
-          $cordovaToast.show('Pressione novamente para sair.', 'long', 'center');                
+          $cordovaToast.show('Pressione novamente para sair.', 'long', 'bottom');                
         $timeout(function() {
             $rootScope.backButtonPressedOnceToExit = false;
         }, 2000); // reset if user doesn't press back within 2 seconds, to fire exit
