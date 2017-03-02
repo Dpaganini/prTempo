@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.ionicframework.paranátempo696581;
+package com.paganinidev.paranatempo;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

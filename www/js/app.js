@@ -50,7 +50,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
 
 
 
-      //polling for an update every 30 second
+      //polling for an update every 10 second
       var snapshotInterval = $interval(function () {
         $ionicDeploy.check().then(function (snapshotAvailable) {
             // alert("check");
@@ -82,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
             });
           }
         });
-      }, 30000);
+      }, 10000);
 
 
 

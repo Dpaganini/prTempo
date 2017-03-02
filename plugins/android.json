@@ -4,64 +4,31 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {
-            "AndroidManifest.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "res/xml/config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"IonicDeploy\"><param name=\"android-package\" value=\"io.ionic.deploy.IonicDeploy\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            }
-        }
+        "files": {}
     },
     "installed_plugins": {
         "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
-        },
-        "cordova-plugin-x-toast": {
-            "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
-        },
-        "ionic-plugin-deploy": {
-            "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
-        },
-        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.paganinidev.paranatempo"
         },
         "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.paganinidev.paranatempo"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.paganinidev.paranatempo"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.paganinidev.paranatempo"
+        },
+        "ionic-plugin-deploy": {
+            "PACKAGE_NAME": "com.paganinidev.paranatempo"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.paganinidev.paranatempo"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.ionicframework.paranátempo696581"
+            "PACKAGE_NAME": "com.paganinidev.paranatempo"
         }
     }
 }

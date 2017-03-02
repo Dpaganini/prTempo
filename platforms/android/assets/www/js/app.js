@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.cloud'])
 
-.run(function ($rootScope, $ionicPlatform, $ionicHistory, $ionicPopup, $ionicDeploy, $interval) {
+.run(function ($rootScope, $ionicPlatform, $ionicHistory, $ionicPopup, $ionicDeploy, $interval, $timeout, $cordovaToast) {
   $ionicPlatform.ready(function () {
 
 
@@ -50,7 +50,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
 
 
 
-      //polling for an update every 30 second
+      //polling for an update every 10 second
       var snapshotInterval = $interval(function () {
         $ionicDeploy.check().then(function (snapshotAvailable) {
             // alert("check");
@@ -66,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
 
                 $ionicPopup.show({
                   title: 'Atualização Disponível',
-                  subTitle: 'Uma ´nova atualização está disponível, deseja atualizar para a última versão?',
+                  subTitle: 'Uma nova atualização está disponível, deseja atualizar para a última versão?',
                   buttons: [
                     {text: 'Agora não'},
                     {
@@ -82,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
             });
           }
         });
-      }, 30000);
+      }, 10000);
 
 
 
@@ -97,32 +97,49 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-  });
+  // });
 
-  $ionicPlatform.registerBackButtonAction(function (e) {
-    if ($rootScope.backButtonPressedOnceToExit) {
-      ionic.Platform.exitApp();
-    }
-    else if ($ionicHistory.backView) {
-      $ionicHistory.goBack();
-    }
-    else {
-      $rootScope.backButtonPressedOnceToExit = true;
-      window.plugins.toast.showShortCenter(
-        "Pressione voltar novamente para sair",
-        function (a) {},
-        function (b) {}
-      );
-      setTimeout(function () {
-        $rootScope.backButtonPressedOnceToExit = false;
-      }, 2000);
+  // $ionicPlatform.registerBackButtonAction(function (e) {
+  //   if ($rootScope.backButtonPressedOnceToExit) {
+  //     ionic.Platform.exitApp();
+  //   }
+  //   // else if ($ionicHistory.backView) {
+  //   //   $ionicHistory.goBack();
+  //   // }
+  //   else {
+  //     $rootScope.backButtonPressedOnceToExit = true;
+  //     window.plugins.toast.showShortCenter(
+  //       "Pressione voltar novamente para sair",
+  //       function (a) {},
+  //       function (b) {}
+  //     );
+  //     setTimeout(function () {
+  //       $rootScope.backButtonPressedOnceToExit = false;
+  //     }, 2000);
+  //   }
+  //   e.preventDefault();
+  //   return false;
+  // }, 101);
+
+
+   $ionicPlatform.registerBackButtonAction(function(e) {
+     if ($rootScope.backButtonPressedOnceToExit) {
+        navigator.app.exitApp(); // or // ionic.Platform.exitApp(); both work
+    // } else if ($ionicHistory.backView()) {
+    //     $ionicHistory.goBack();
+     } else {
+        $rootScope.backButtonPressedOnceToExit = true;
+          $cordovaToast.show('Pressione novamente para sair.', 'long', 'bottom');                
+        $timeout(function() {
+            $rootScope.backButtonPressedOnceToExit = false;
+        }, 2000); // reset if user doesn't press back within 2 seconds, to fire exit
     }
     e.preventDefault();
     return false;
   }, 101);
 
 
-
+ });
 
   // alert("run");
   // var deploy = new Ionic.Deploy();
