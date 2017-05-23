@@ -5,52 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.cloud'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.select', 'ngCordova', 'ionic.cloud', 'ui.select'])
 
 .run(function ($rootScope, $ionicPlatform, $ionicHistory, $ionicPopup, $ionicDeploy, $interval, $timeout, $cordovaToast) {
   $ionicPlatform.ready(function () {
-
-
-    // alert("1");
-    // $ionicDeploy.channel = 'production';
-    // alert($ionicDeploy.getSnapshots()).promisse;
-    // console.log($ionicDeploy.getSnapshots());
-  
-  
-    // $ionicDeploy.check().then(function (snapshotAvailable) {
-    //   alert("check");
-    //   if (snapshotAvailable) {
-
-
-    //     // When snapshotAvailable is true, you can apply the snapshot
-    //     $ionicDeploy.download().then(function () {
-    //       alert("down");
-    //       $ionicDeploy.extract().then(function () {
-    //         alert("extract");
-    //         $ionicPopup.show({
-    //           title: 'Update available',
-    //           subTitle: 'An update was just downloaded. Would you like to restart your app to use the latest features?',
-    //           buttons: [
-    //             {
-    //               text: 'Not now'
-    //           },
-    //             {
-    //               text: 'Restart',
-    //               onTap: function (e) {
-    //                 alert("load");
-    //                 $ionicDeploy.load();
-    //               }
-    //           }]
-    //         });
-    //       })
-
-    //     });
-    //   }
-    // });
-
-
-
-      //polling for an update every 10 second
+      //polling for an update every 300 second
       var snapshotInterval = $interval(function () {
         $ionicDeploy.check().then(function (snapshotAvailable) {
             // alert("check");
@@ -82,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
             });
           }
         });
-      }, 10000);
+      }, 300000);
 
 
 
@@ -97,30 +56,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-  // });
-
-  // $ionicPlatform.registerBackButtonAction(function (e) {
-  //   if ($rootScope.backButtonPressedOnceToExit) {
-  //     ionic.Platform.exitApp();
-  //   }
-  //   // else if ($ionicHistory.backView) {
-  //   //   $ionicHistory.goBack();
-  //   // }
-  //   else {
-  //     $rootScope.backButtonPressedOnceToExit = true;
-  //     window.plugins.toast.showShortCenter(
-  //       "Pressione voltar novamente para sair",
-  //       function (a) {},
-  //       function (b) {}
-  //     );
-  //     setTimeout(function () {
-  //       $rootScope.backButtonPressedOnceToExit = false;
-  //     }, 2000);
-  //   }
-  //   e.preventDefault();
-  //   return false;
-  // }, 101);
-
 
    $ionicPlatform.registerBackButtonAction(function(e) {
      if ($rootScope.backButtonPressedOnceToExit) {
@@ -141,65 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
 
  });
 
-  // alert("run");
-  // var deploy = new Ionic.Deploy();
-  // deploy.watch().then(function () {}, function () {}, function (updateAvailable) {
-  //         alert("watch");
-  //   if (updateAvailable) {
-  //     alert("updateAvailable");
-  //     deploy.download().then(function () {
-  //             alert("download");
-
-  //       deploy.extract().then(function () {
-  //               alert("extract");
-
-  //         deploy.unwatch();
-  //         $ionicPopup.show({
-  //           title: 'Update available',
-  //           subTitle: 'An update was just downloaded. Would you like to restart your app to use the latest features?',
-  //           buttons: [
-  //             {
-  //               text: 'Not now'
-  //             },
-  //             {
-  //               text: 'Restart',
-  //               onTap: function (e) {
-  //                 deploy.load();
-  //               }
-  //             }]
-  //         });
-  //       });
-  //     });
-  //   }
-  // });
-
-
-
-  //iniciu
-
-  // var posOptions = {
-  //   timeout: 10000,
-  //   enableHighAccuracy: false
-  // };
-
-  // $cordovaGeolocation
-  //   .getCurrentPosition(posOptions)
-  //   .then(function (position) {
-  //     var lat = position.coords.latitude
-  //     var long = position.coords.longitude
-
-
-  //   }, function (err) {
-  //     // error
-  //   });
-
-  // var buscaCidadeJson = function () {
-  //   $http.get("http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json&json_callback=my_callback").success(function (data) {
-  //     console.log(data)
-  //   })};
-
-  //fimn
-
+  
 })
 
 .config(function ($stateProvider, $urlRouterProvider, $ionicCloudProvider) {

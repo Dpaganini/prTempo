@@ -17,7 +17,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
                     var prop = keys[i];
                     var text = props[prop].toLowerCase();
                     if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
-                        itemMatches = true;
+                        itemMatches = trocaue;
                         break;
                     }
                 }
@@ -101,7 +101,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     $scope.checkForUpdates = function () {
         console.log('Ionic Deploy: Checking for updates');
         $ionicDeploy.check().then(function (hasUpdate) {
-            
+
             alert('Ionic Deploy: Update available: ' + hasUpdate);
             $rootScope.lastChecked = new Date();
             $scope.hasUpdate = hasUpdate;
@@ -131,11 +131,15 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // Funções de inicialização do controller
     $scope.init = function () {
+        $scope.carregaCidades();
+        $scope.loadLastCity();
         $scope.baixaXml();
         $scope.plataforma = ionic.Platform.platform();
-        $scope.buscaLocal();
+        // $scope.buscaLocal();
         $rootScope.trocaImagemFundo();
     };
+
+    $rootScope.cidadePrevi = {};
 
     // Funções ao atualizar - Pull down configurado no <ion-refresher on-refresh="doRefresh()" spinner="lines"> do HTML
     $scope.doRefresh = function () {
@@ -146,26 +150,47 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
         $scope.$broadcast('scroll.refreshComplete');
     };
 
+    $scope.loadLastCity = function(){
+        // Definindo Cidade Padrão (Upgrade)
+        if(window.localStorage['ultimaCidade'] !== undefined) {
+            $rootScope.cidadePrevi.selected = JSON.parse(window.localStorage['ultimaCidade'] || '{}');
+            if($rootScope.cidadePrevi.selected.text.indexOf('(Atual)') >= 0){
+                $scope.buscaLocal();
+            }
+        }
+        else{
+            $rootScope.cidadePrevi.selected = {
+                cidadeId: '4106902',
+                text: 'Curitiba'
+            };
+            $scope.buscaLocal();
+        }
+    }   
 
-    // Definindo Cidade Padrão (Upgrade)
-    $rootScope.cidadePrevi = {
-        cidadeId: '4104808',
-        text: "Cascavel"
-    };
-
+    $scope.carregaCidades = function(){
     // Buscando lista de cidades do Paraná
 
-    $http.get("js/cidades.json").success(function (data) {
-        $rootScope.listaCidades = data.data;
-        // $scope.buscaIdCidade()
+    // $http.get("js/cidades.json").success(function (data) {
+    //     $rootScope.listaCidades = data.data;
+    //     // $scope.buscaIdCidade()
 
-    });
+    // });
 
     // Buscando lista de Principais cidades do Paraná
 
-    $http.get("js/cidadesPrincipais.json").success(function (data) {
+    $http.get("js/cidades.json").success(function (data) {
+    // $http.get("js/cidadesPrincipais.json").success(function (data) {
         $scope.listaCidadesPrincipais = data.data;
-    });
+        
+        $scope.automatico = {
+            cidadeId: 'auto',
+            text: 'Localização Automática'
+        }
+        $scope.listaCidadesPrincipais.unshift($scope.automatico);
+    }
+    );
+
+};
 
     // GeoLocalização - Busca da Posição pelo $cordovaGeoLocation - Início
     // Configuração do Plugin
@@ -176,8 +201,11 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // Buscando localização por gps
     $scope.buscaLocal = function () {
-        console.log("Buscando local");
-        $cordovaGeolocation
+
+        // cordova.plugins.diagnostic.isLocationAvailable(function(available){
+
+            console.log("Buscando local");
+            $cordovaGeolocation
             .getCurrentPosition(posOptions)
             .then(function (position) {
                 var lat = position.coords.latitude
@@ -185,14 +213,37 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
                 buscaCidadeJson(lat, long)
             }, function (err) {
                 console.log("Erro no local")
+                $ionicPopup.alert({
+                    title: "Sem localização",
+                    content: "Você precisa ligar o GPS!"
+                })
+                .then(function(result) {
+                    if(window.localStorage['ultimaCidade'] !== undefined) {
+                        $rootScope.cidadePrevi.selected = JSON.parse(window.localStorage['ultimaCidade'] || '{}');
+                    }else{
+                        $rootScope.cidadePrevi.selected = {
+                            cidadeId: '4106902',
+                            text: 'Curitiba'
+                        };
+                    }
+                });
                     // error
-            });
+                });
+
+
+        // }, function(error){
+        //     console.error("The following error occurred: "+error);
+        //     cordova.plugins.diagnostic.switchToLocationSettings();
+        // });
+
+        
+
     };
 
     // Buscando nome da cidade no WebService do OpenStreetMap
     var buscaCidadeJson = function (lat, long) {
-        $http.get("http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json").success(function (data) {
-            //  http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json&json_callback=my_callback"
+        $http.get("http://nominatim.openstreetmap.org/reverse?lat=" + lat + "&lon=" + long + "&format=json")
+        .success(function (data) {
             $scope.cidade = data.address.city
             $scope.buscaIdCidade();
         });
@@ -200,17 +251,39 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // Buscando o ID da cidade na lista de cidades do escopo/menu (Upgrade para buscar do json/xml)
     $scope.buscaIdCidade = function () {
-        angular.forEach($rootScope.listaCidades, function (item) {
-            if (item.text === $scope.cidade) {
-                $rootScope.cidadePrevi = {
-                    cidadeId: item.cidadeId,
-                    text: item.text + " (Atual)"
-                }
-                $scope.baixaXml();
+        for (i = 0; i < $scope.listaCidadesPrincipais.length; ++i) {
+            if ($scope.listaCidadesPrincipais[i].text === $scope.cidade){
 
+                $rootScope.cidadePrevi.selected = {
+                    cidadeId: $scope.listaCidadesPrincipais[i].cidadeId,
+                    text: $scope.listaCidadesPrincipais[i].text
+                };
+                
+                $rootScope.cidadePrevi.selected.text = $rootScope.cidadePrevi.selected.text + " (Atual)"
+                window.localStorage['ultimaCidade'] = JSON.stringify($rootScope.cidadePrevi.selected);
+                
+            } 
+        }
+        if($rootScope.cidadePrevi.selected.text != $scope.listaCidadesPrincipais[0].text){
+            $scope.listaCidadesPrincipais.unshift($rootScope.cidadePrevi.selected);
+                // $rootScope.cidadePrevi.selected.text = $scope.listaCidadesPrincipais[0].text;
             }
-        });
-        $rootScope.listaCidades.unshift($rootScope.cidadePrevi);
+            $scope.baixaXml();
+
+        // angular.forEach($scope.listaCidadesPrincipais, function (item) {
+        //     console.log(item)
+        //     if (item.text === $scope.cidade) {
+        //         $rootScope.cidadePrevi = {
+        //             cidadeId: item.cidadeId,
+        //             text: item.text
+        //         };
+        //         console.log($rootScope.cidadePrevi)
+        //         window.localStorage['ultimaCidade'] = JSON.stringify($rootScope.cidadePrevi);
+        //         $rootScope.cidadePrevi.text = item.text + " (Atual)"
+        //         $scope.listaCidadesPrincipais.unshift($rootScope.cidadePrevi);
+        //         $scope.baixaXml();
+        //     }
+        // });
         // $rootScope.listaCidades.splice(0, 0, $rootScope.cidadePrevi);
 
     }
@@ -251,8 +324,15 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
     // Função de troca de cidade ao escolher no drop-down do HTML
     $rootScope.trocaCidade = function (id, nome) {
-        $rootScope.cidadePrevi.cidadeId = id;
-        $rootScope.cidadePrevi.text = nome;
+        if(id === "auto"){
+            $scope.buscaLocal();
+        } else {
+            $rootScope.cidadePrevi.selected = {
+                cidadeId: id,
+                text: nome
+            };
+            window.localStorage['ultimaCidade'] = JSON.stringify($rootScope.cidadePrevi.selected);
+        }
         $scope.baixaXml();
     }
 
@@ -260,7 +340,7 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     // Função de baixar o XML da previsão e chamar o parser personalizado
     $scope.baixaXml = function () {
 
-        $http.get("http://www.simepar.br/tempo2/xml/PR/" + $rootScope.cidadePrevi.cidadeId + ".xml").success(function (data) {
+        $http.get("http://www.simepar.br/tempo2/xml/PR/" + $rootScope.cidadePrevi.selected.cidadeId + ".xml").success(function (data) {
             // console.log(data);
             var x2js = new X2JS();
             var jsonData = x2js.xml_str2json(data);
@@ -384,12 +464,12 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
             $scope.prev2_Dia = jsonData.boletim.municipio.dia2.tempo.legendadia.__text;
             $scope.prev2_DiaIcone = jsonData.boletim.municipio.dia2.tempo.legendadia._icone;
             $scope.prev2_legendadia2 = true;
-            console.log("verdade");
+            // console.log("verdade");
         }
 
         else {
             $scope.prev2_legendadia2 = false;
-            console.log("falso2");
+            // console.log("falso2");
             // ---- Inicio Periodos DIA 2
 
 
@@ -397,11 +477,11 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
                 $scope.prev2_Madrugada = jsonData.boletim.municipio.dia2.tempo.legendamadrugada.__text;
                 $scope.prev2_MadrugadaIcone = jsonData.boletim.municipio.dia2.tempo.legendamadrugada._icone;
                 $scope.madrugada2 = true;
-                console.log("mad verd");
+                // console.log("mad verd");
             }
             else {
                 $scope.madrugada2 = false;
-                console.log("mad fals ");
+                // console.log("mad fals ");
             }
 
 
@@ -526,16 +606,16 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
     // DECLARAÇÃO DE VARIÁVEIS REFERENTES A ESTAÇÃO/CIDADE
     $scope.declaraCidadeEstacao = function () {
         $rootScope.cidadeEstacao = {
-            cidadeId: '4104808',
-            graficoId: '24535333',
-            text: "Cascavel (Atual-E-Emulado)"
+            cidadeId: '4106902',
+            graficoId: '25264916',
+            text: "Curitiba"
         };
 
         $scope.data = {
             estacaoId: 'http://www.simepar.br/site/imagens/graficos_condicoes/24535333.png'
                 // estacaoId: "24535333"
-        };
-    }
+            };
+        }
 
     // BUSCA AS ESTAÇÕES NO JSON
     $scope.buscaJsonEstacoes = function () {
@@ -552,12 +632,12 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
 
 
             angular.forEach($scope.listaEstacoes, function (item) {
-                if (item.cidadeId === $rootScope.cidadePrevi.cidadeId) {
+                if (item.cidadeId === $rootScope.cidadePrevi.selected.cidadeId) {
                     console.log(item);
                     $rootScope.cidadeEstacao = {
                         cidadeId: item.cidadeId,
                         graficoId: item.graficoId,
-                        text: $rootScope.cidadePrevi.text
+                        text: $rootScope.cidadePrevi.selected.text
                     }
                     $scope.trocaGraficos($rootScope.cidadeEstacao.graficoId);
                     $scope.baixaDivs();
@@ -578,13 +658,13 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
             // success handler
             function (response) {
                 var data = response.data,
-                    status = response.status,
-                    header = response.header,
-                    config = response.config;
+                status = response.status,
+                header = response.header,
+                config = response.config;
 
                 var el = document.createElement('html');
                 el.innerHTML = data;
-                console.log(el);
+                // console.log(el);
                 var tempAtualBruto = el.getElementsByClassName('tempChuva')[0].childNodes[2].data;
                 var chuvaBruto = el.getElementsByClassName('tempChuva')[0].childNodes[6].data;
                 var urBruto = el.getElementsByClassName('ur')[0].childNodes[0].data;
@@ -613,9 +693,9 @@ angular.module('starter.controllers', ['ionic', 'ui.select'])
             // error handler
             function (response) {
                 var data = response.data,
-                    status = response.status,
-                    header = response.header,
-                    config = response.config;
+                status = response.status,
+                header = response.header,
+                config = response.config;
                 //console.log(response.data);
             });
     }

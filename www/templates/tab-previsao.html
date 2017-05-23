@@ -1,49 +1,45 @@
-<ion-view view-title="Paraná Tempo" ng-controller="PrevisaoCtrl" class="imagens-background" ng-style="retornaImgFundo()">
+<ion-view view-title="Paraná Tempo" class="imagens-background" ng-style="retornaImgFundo()">
 
   <!--NAV BAR com select de cidades-->
   <ion-nav-buttons side="right">
-    <ui-select ng-model="cidadePrevi" theme="select2" style="min-width: 160px;" title="Cidade" on-select="trocaCidade($select.selected.cidadeId,$select.selected.text)">
-      <ui-select-match placeholder="Selecione ou busque uma cidade na lista...">{{$select.selected.text}}</ui-select-match>
-      <ui-select-choices repeat="item in listaCidadesPrincipais | filter: {text: $select.search}">
-        <span ng-bind-html="item.text | highlight: $select.search"></span>
-      </ui-select-choices>
-    </ui-select>
 
-  </ion-nav-buttons>
+<button class="button" ng-controller='selectCityModalCtrl' ng-click="openSelectModal()">{{cidadePrevi.selected.text}} <i class = "icon ion-location"></i></button>
 
-  <!--SEÇÃO DE CONTEÚDO:-->
-  <ion-content class="padding item-transparente" on-swipe-right="goBack()" on-swipe-left="goForward()">
-    <ion-refresher on-refresh="doRefresh()" spinner="lines">
-    </ion-refresher>
+</ion-nav-buttons>
 
-    <!--SEÇÃO PALAVRA METEREOLOGISTA-->
-    <!--<div class="list card">-->
-    <!--  <div class="item item-divider item-icon-right" ng-click="palavra();">Palavra do Meteorologista - Condições Meteorológicas-->
-    <!--    <i class="icon ion-arrow-up-a" ng-if="palavraRes"></i>-->
-    <!--    <i class="icon ion-arrow-down-a" ng-if="!palavraRes"></i>-->
-    <!--  </div>-->
+<!--SEÇÃO DE CONTEÚDO:-->
+<ion-content class="padding item-transparente" on-swipe-right="goBack()" on-swipe-left="goForward()">
+  <ion-refresher on-refresh="doRefresh()" spinner="lines">
+  </ion-refresher>
 
-    <!--  <div class="item item-body animate-hide" ng-if="palavraRes">-->
-    <!--    <h2 align="center">{{cond_Dia1Semana +". "+ cond_Dia1Data}}</h2>-->
-    <!--    <p>{{cond_Dia1Dados}}</p>-->
-    <!--  </div>-->
+  <!--SEÇÃO PALAVRA METEREOLOGISTA-->
+  <!--<div class="list card">-->
+  <!--  <div class="item item-divider item-icon-right" ng-click="palavra();">Palavra do Meteorologista - Condições Meteorológicas-->
+  <!--    <i class="icon ion-arrow-up-a" ng-if="palavraRes"></i>-->
+  <!--    <i class="icon ion-arrow-down-a" ng-if="!palavraRes"></i>-->
+  <!--  </div>-->
 
-    <!--  <div class="item item-body" ng-if="palavraRes">-->
-    <!--    <h2 align="center">{{cond_Dia2Semana +". "+ cond_Dia2Data}}</h2>-->
-    <!--    <p>{{cond_Dia2Dados}}</p>-->
-    <!--  </div>-->
-    <!--</div>-->
+  <!--  <div class="item item-body animate-hide" ng-if="palavraRes">-->
+  <!--    <h2 align="center">{{cond_Dia1Semana +". "+ cond_Dia1Data}}</h2>-->
+  <!--    <p>{{cond_Dia1Dados}}</p>-->
+  <!--  </div>-->
+
+  <!--  <div class="item item-body" ng-if="palavraRes">-->
+  <!--    <h2 align="center">{{cond_Dia2Semana +". "+ cond_Dia2Data}}</h2>-->
+  <!--    <p>{{cond_Dia2Dados}}</p>-->
+  <!--  </div>-->
+  <!--</div>-->
 
 
-    <!--SEÇÃO PREVISÃO HOJE/DIA1-->
-    <div class="list card">
-      <div class="row item-divider">
-        <div class="col">
-          <h4>{{prev1_Data +" - "+prev1_Semana+"."}}</h4>
-        </div>
-        <div class="col" ng-if="maxima">
-          <h4><i class="icon ion-arrow-down-c calm"></i> {{prev1_TempMin+"°C"}} &emsp;
-            <i class="icon ion-arrow-up-c assertive"></i> {{prev1_TempMax+"°C"}}</h4>
+  <!--SEÇÃO PREVISÃO HOJE/DIA1-->
+  <div class="list card">
+    <div class="row item-divider">
+      <div class="col">
+        <h4>{{prev1_Data +" - "+prev1_Semana+"."}}</h4>
+      </div>
+      <div class="col" ng-if="maxima">
+        <h4><i class="icon ion-arrow-down-c calm"></i> {{prev1_TempMin+"°C"}} &emsp;
+          <i class="icon ion-arrow-up-c assertive"></i> {{prev1_TempMax+"°C"}}</h4>
         </div>
       </div>
 
@@ -57,11 +53,11 @@
       <div ng-if="manha" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev1_ManhaIcone}}" />
         <div class="row">
           <!--<div class="col">-->
-            <h2 style="min-width: 50px" >Manhã:</h2>
-            &nbsp;
+          <h2 style="min-width: 50px" >Manhã:</h2>
+          &nbsp;
           <!--</div>-->
           <!--<div class="col">-->
-            <span>{{prev1_Manha}}</span>
+          <span>{{prev1_Manha}}</span>
           <!--</div>-->
 
         </div>
@@ -92,112 +88,112 @@
         <div class="col">
           <h4><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}} &emsp;
             <i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h4>
+          </div>
+          <!--<div>-->
+          <!--  <h4>{{prev2_Data +" - "+prev2_Semana+"."}}</h4>-->
+          <!--</div>-->
+          <!--<div class="col" align="center">-->
+          <!--  <h3><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}</h3>-->
+          <!--</div>-->
+          <!--<div class="col" align="center">-->
+          <!--  <h3><i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h3>-->
+          <!--</div>-->
         </div>
-        <!--<div>-->
-        <!--  <h4>{{prev2_Data +" - "+prev2_Semana+"."}}</h4>-->
-        <!--</div>-->
-        <!--<div class="col" align="center">-->
-        <!--  <h3><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}</h3>-->
-        <!--</div>-->
-        <!--<div class="col" align="center">-->
-        <!--  <h3><i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h3>-->
-        <!--</div>-->
-      </div>
 
-      <div ng-if="madrugada2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_MadrugadaIcone}}" />
-        <div class="row">
-          <h2 style="min-width: 55px" >Madrugada:</h2>
-          &nbsp;
-          <span>{{prev2_Madrugada}}</span>
+        <div ng-if="madrugada2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_MadrugadaIcone}}" />
+          <div class="row">
+            <h2 style="min-width: 55px" >Madrugada:</h2>
+            &nbsp;
+            <span>{{prev2_Madrugada}}</span>
+          </div>
         </div>
-      </div>
-      <div ng-if="manha2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_ManhaIcone}}" />
-        <div class="row">
-          <h2 style="min-width: 50px" >Manhã:</h2>
-          &nbsp;
-          <span>{{prev2_Manha}}</span>
+        <div ng-if="manha2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_ManhaIcone}}" />
+          <div class="row">
+            <h2 style="min-width: 50px" >Manhã:</h2>
+            &nbsp;
+            <span>{{prev2_Manha}}</span>
+          </div>
         </div>
-      </div>
-      <div ng-if="tarde2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_TardeIcone}}">
-        <div class="row">
-          <h2 style="min-width: 50px" >Tarde:</h2>
-          &nbsp;
-          <span>{{prev2_Tarde}}</span>
+        <div ng-if="tarde2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_TardeIcone}}">
+          <div class="row">
+            <h2 style="min-width: 50px" >Tarde:</h2>
+            &nbsp;
+            <span>{{prev2_Tarde}}</span>
+          </div>
         </div>
-      </div>
-      <div ng-if="noite2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_NoiteIcone}}">
-        <div class="row">
-          <h2 style="min-width: 50px" >Noite:</h2>
-          &nbsp;
-          <span>{{prev2_Noite}}</span>
-        </div>
-      </div>
-    </div>
-
-    <!--SEÇÃO PREVISAO PROXIMOS-->
-    <div class="list card">
-      <div class="item item-divider">Próximos dias:</div>
-
-      <!--DIA 2-->
-      <div class="item item-avatar" ng-if="prev2_legendadia2">
-        <img ng-src="http://www.simepar.br{{prev2_DiaIcone}}" />
-        <div class="row">
-          <h2>{{prev2_Data+" - "+prev2_Semana+"."}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h2>
-        </div>
-        <div class="row col">
-          <p>{{prev2_Dia}}</p>
+        <div ng-if="noite2" class="item item-avatar"> <img ng-src="http://www.simepar.br{{prev2_NoiteIcone}}">
+          <div class="row">
+            <h2 style="min-width: 50px" >Noite:</h2>
+            &nbsp;
+            <span>{{prev2_Noite}}</span>
+          </div>
         </div>
       </div>
 
-      <!--DIA 3      -->
-      <div class="item item-avatar">
-        <img ng-src="http://www.simepar.br{{prev3_DiaIcone}}" />
-        <div class="row">
-          <h2>{{prev3_Data+" - "+prev3_Semana+"."}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-down-c calm"></i> {{prev3_TempMin+"°C"}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev3_TempMax+"°C"}}</h2>
+      <!--SEÇÃO PREVISAO PROXIMOS-->
+      <div class="list card">
+        <div class="item item-divider">Próximos dias:</div>
+
+        <!--DIA 2-->
+        <div class="item item-avatar" ng-if="prev2_legendadia2">
+          <img ng-src="http://www.simepar.br{{prev2_DiaIcone}}" />
+          <div class="row">
+            <h2>{{prev2_Data+" - "+prev2_Semana+"."}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-down-c calm"></i> {{prev2_TempMin+"°C"}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev2_TempMax+"°C"}}</h2>
+          </div>
+          <div class="row col">
+            <p>{{prev2_Dia}}</p>
+          </div>
         </div>
-        <div class="row col">
-          <p>{{prev3_Dia}}</p>
+
+        <!--DIA 3      -->
+        <div class="item item-avatar">
+          <img ng-src="http://www.simepar.br{{prev3_DiaIcone}}" />
+          <div class="row">
+            <h2>{{prev3_Data+" - "+prev3_Semana+"."}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-down-c calm"></i> {{prev3_TempMin+"°C"}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev3_TempMax+"°C"}}</h2>
+          </div>
+          <div class="row col">
+            <p>{{prev3_Dia}}</p>
+          </div>
+        </div>
+
+        <!--DIA 4-->
+        <div class="item item-avatar">
+          <img ng-src="http://www.simepar.br{{prev4_DiaIcone}}" />
+          <div class="row">
+            <h2>{{prev4_Data+" - "+prev4_Semana+"."}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-down-c calm"></i> {{prev4_TempMin+"°C"}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev4_TempMax+"°C"}}</h2>
+          </div>
+          <div class="row col">
+            <p>{{prev4_Dia}}</p>
+          </div>
+        </div>
+
+        <!--DIA 5-->
+        <div class="item item-avatar">
+          <img ng-src="http://www.simepar.br{{prev5_DiaIcone}}" />
+          <div class="row">
+            <h2>{{prev5_Data+" - "+prev5_Semana+"."}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-down-c calm"></i> {{prev5_TempMin+"°C"}}</h2>
+            &emsp;
+            <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev5_TempMax+"°C"}}</h2>
+          </div>
+          <div class="row col">
+            <p>{{prev5_Dia}}</p>
+          </div>
         </div>
       </div>
 
-      <!--DIA 4-->
-      <div class="item item-avatar">
-        <img ng-src="http://www.simepar.br{{prev4_DiaIcone}}" />
-        <div class="row">
-          <h2>{{prev4_Data+" - "+prev4_Semana+"."}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-down-c calm"></i> {{prev4_TempMin+"°C"}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev4_TempMax+"°C"}}</h2>
-        </div>
-        <div class="row col">
-          <p>{{prev4_Dia}}</p>
-        </div>
-      </div>
-
-      <!--DIA 5-->
-      <div class="item item-avatar">
-        <img ng-src="http://www.simepar.br{{prev5_DiaIcone}}" />
-        <div class="row">
-          <h2>{{prev5_Data+" - "+prev5_Semana+"."}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-down-c calm"></i> {{prev5_TempMin+"°C"}}</h2>
-          &emsp;
-          <h2><i class="icon ion-arrow-up-c assertive"></i> {{prev5_TempMax+"°C"}}</h2>
-        </div>
-        <div class="row col">
-          <p>{{prev5_Dia}}</p>
-        </div>
-      </div>
-    </div>
-
-  </ion-content>
-</ion-view>
+    </ion-content>
+  </ion-view>

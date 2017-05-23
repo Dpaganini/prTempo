@@ -1,0 +1,31 @@
+<ion-modal-view>
+
+	<ion-header-bar align-title="left" class="bar bar-header bar-balanced">
+		<button class="button button-clear ion-chevron-left " ng-click="closeModal()"></button>
+		<h1 class="title">Selecione uma Cidade</h1>		
+	</ion-header-bar>
+
+	<ion-header-bar class="bar-light bar-subheader">
+		<input type="search"
+		placeholder="Pesquise"
+		ng-model="search"
+		ng-focus="searchFocused = true"
+		ng-blur="searchFocused = false"
+		class="full-width">
+</ion-header-bar>
+
+<ion-content class="padding has-subheader has-header">
+
+	<div class="list">
+
+		<a class="item" ng-click="clickItem(item)" ng-repeat="item in items | filter:{text:search}">
+			<h3 class="center">{{item.text}}</h3>
+		</a>
+
+	</div>
+
+
+</ion-content>
+
+</ion-modal-view>
+

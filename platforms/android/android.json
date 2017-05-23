@@ -15,8 +15,13 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
                         }
-                    ]
+                    ],
+                    "/manifest/application": []
                 }
             },
             "res/xml/config.xml": {
@@ -45,8 +50,17 @@
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
                         }
                     ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": []
                 }
             }
         }
@@ -71,6 +85,9 @@
             "PACKAGE_NAME": "com.paganinidev.paranatempo"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.paganinidev.paranatempo"
+        },
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.paganinidev.paranatempo"
         }
     },
@@ -127,6 +144,23 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -136,6 +170,7 @@
         "cordova-plugin-whitelist": "1.3.0",
         "cordova-plugin-x-toast": "2.5.2",
         "ionic-plugin-deploy": "0.6.4",
-        "ionic-plugin-keyboard": "2.2.1"
+        "ionic-plugin-keyboard": "2.2.1",
+        "cordova-plugin-network-information": "1.3.2"
     }
 }

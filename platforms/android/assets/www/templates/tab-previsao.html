@@ -2,7 +2,7 @@
 
   <!--NAV BAR com select de cidades-->
   <ion-nav-buttons side="right">
-    <ui-select ng-model="cidadePrevi" theme="select2" style="min-width: 160px;" title="Cidade" on-select="trocaCidade($select.selected.cidadeId,$select.selected.text)">
+    <ui-select ng-model="cidadePrevi.selected" theme="select2" style="min-width: 160px;" title="Cidade" on-select="trocaCidade($select.selected.cidadeId,$select.selected.text)">
       <ui-select-match placeholder="Selecione ou busque uma cidade na lista...">{{$select.selected.text}}</ui-select-match>
       <ui-select-choices repeat="item in listaCidadesPrincipais | filter: {text: $select.search}">
         <span ng-bind-html="item.text | highlight: $select.search"></span>

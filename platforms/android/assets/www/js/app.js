@@ -10,6 +10,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
 .run(function ($rootScope, $ionicPlatform, $ionicHistory, $ionicPopup, $ionicDeploy, $interval, $timeout, $cordovaToast) {
   $ionicPlatform.ready(function () {
 
+    if(window.Connection) {
+                if(navigator.connection.type == Connection.NONE) {
+                    $ionicPopup.confirm({
+                        title: "Sem conexão",
+                        content: "Você está desconectado da internet!"
+                    })
+                    .then(function(result) {
+                        if(!result) {
+                            ionic.Platform.exitApp();
+                        }
+                    });
+                }
+            }
+
 
     // alert("1");
     // $ionicDeploy.channel = 'production';
@@ -82,7 +96,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
             });
           }
         });
-      }, 10000);
+      }, 300000);
 
 
 
